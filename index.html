@@ -2,1034 +2,3181 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#09070b">
-  <meta name="description" content="Septemberlicht — Zwei Jahre an deiner Seite">
+  <meta name="description" content="Septemberlicht · Zwei Jahre an deiner Seite">
   <title>Septemberlicht · Zwei Jahre</title>
 
   <style>
-    :root{
-      --bg:#09070b;
-      --bg2:#140c12;
-      --text:#fff8f6;
-      --muted:rgba(255,248,246,.52);
-      --muted2:rgba(255,248,246,.32);
-      --rose:#ffb4c0;
-      --rose2:#ff8ea1;
-      --gold:#f1d4a5;
-      --glass:rgba(255,255,255,.055);
-      --glass2:rgba(255,255,255,.03);
-      --border:rgba(255,255,255,.10);
-      --ease:cubic-bezier(.16,1,.3,1);
+    :root {
+      --bg: #08070b;
+      --bg2: #160b12;
+
+      --text: #fff8f6;
+      --muted: rgba(255, 248, 246, .50);
+      --muted-soft: rgba(255, 248, 246, .30);
+
+      --rose: #ffb4c0;
+      --rose-bright: #ff8fa4;
+      --gold: #f0d19e;
+
+      --glass: rgba(255,255,255,.055);
+      --border: rgba(255,255,255,.09);
+
+      --ease: cubic-bezier(.16,1,.3,1);
     }
 
-    *{box-sizing:border-box}
-    html{width:100%;height:100%;background:var(--bg)}
-    body{
-      margin:0;
-      width:100%;
-      height:100%;
-      overflow:hidden;
-      color:var(--text);
-      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,"Segoe UI",sans-serif;
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        Inter,
+        "Segoe UI",
+        sans-serif;
+
+      color: var(--text);
+
       background:
-        radial-gradient(ellipse at 50% 0%,rgba(255,170,188,.12),transparent 38%),
-        radial-gradient(ellipse at 10% 90%,rgba(240,192,143,.08),transparent 28%),
-        radial-gradient(ellipse at 90% 85%,rgba(200,120,175,.08),transparent 28%),
-        linear-gradient(180deg,#08070a 0%,#0c080d 50%,#150b11 100%);
+        radial-gradient(
+          ellipse at 50% 0%,
+          rgba(255, 171, 188, .12),
+          transparent 38%
+        ),
+
+        radial-gradient(
+          ellipse at 10% 90%,
+          rgba(240, 190, 140, .08),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          ellipse at 90% 85%,
+          rgba(199, 120, 173, .08),
+          transparent 30%
+        ),
+
+        linear-gradient(
+          180deg,
+          #08070a 0%,
+          #0c080e 52%,
+          #160b12 100%
+        );
     }
 
-    button{font:inherit}
-    canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
-    #nebula{z-index:0}
-    #stars{z-index:1}
-    #petals{z-index:2}
-    #hearts{z-index:3}
+    button {
+      font: inherit;
+    }
 
-    .page{
-      position:relative;
-      z-index:5;
-      height:100%;
-      width:100%;
-      display:flex;
-      flex-direction:column;
+    canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    #nebula {
+      z-index: 0;
+    }
+
+    #stars {
+      z-index: 1;
+    }
+
+    #petals {
+      z-index: 2;
+    }
+
+    #hearts {
+      z-index: 3;
+    }
+
+    /* =========================================
+       SEITEN-CONTAINER
+    ========================================== */
+
+    .page {
+      position: relative;
+      z-index: 5;
+
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+
       padding:
-        max(18px,env(safe-area-inset-top))
+        max(18px, env(safe-area-inset-top))
         16px
-        max(16px,env(safe-area-inset-bottom));
+        max(16px, env(safe-area-inset-bottom));
     }
 
-    .topbar{
-      width:min(1120px,100%);
-      margin:0 auto;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:4px 0 14px;
-      flex:0 0 auto;
+    /* =========================================
+       HEADER
+    ========================================== */
+
+    .topbar {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 4px 0 14px;
+
+      flex: 0 0 auto;
     }
 
-    .eyebrow{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-size:10px;
-      letter-spacing:.28em;
-      text-transform:uppercase;
-      color:rgba(255,248,246,.48);
-      white-space:nowrap;
-    }
-    .eyebrow:before{
-      content:"";
-      width:30px;
-      height:1px;
-      background:linear-gradient(90deg,var(--rose),transparent);
+    .eyebrow {
+      display: flex;
+      align-items: center;
+
+      gap: 10px;
+
+      color: rgba(255, 248, 246, .46);
+
+      font-size: 10px;
+      letter-spacing: .28em;
+
+      text-transform: uppercase;
+
+      white-space: nowrap;
     }
 
-    .mark{
-      color:var(--rose);
-      font-size:22px;
-      line-height:1;
-      animation:heartbeat 3.1s ease-in-out infinite;
-      text-shadow:0 0 22px rgba(255,157,181,.42);
-    }
+    .eyebrow::before {
+      content: "";
 
-    @keyframes heartbeat{
-      0%,100%{transform:scale(1);opacity:.72}
-      50%{transform:scale(1.13);opacity:1}
-    }
+      width: 30px;
+      height: 1px;
 
-    .main{
-      width:min(920px,100%);
-      min-height:0;
-      flex:1;
-      margin:0 auto;
-      display:flex;
-      flex-direction:column;
-    }
-
-    .hero{
-      text-align:center;
-      flex:0 0 auto;
-      padding:6px 0 18px;
-    }
-
-    .title{
-      margin:0;
-      font-size:clamp(34px,6.2vw,74px);
-      line-height:1.02;
-      letter-spacing:-.05em;
-      font-weight:520;
-      text-wrap:balance;
-      text-shadow:0 15px 55px rgba(0,0,0,.35);
-    }
-
-    .subtitle{
-      margin:11px 0 0;
-      font-size:clamp(13px,2vw,17px);
-      color:var(--muted);
-      font-weight:300;
-      letter-spacing:.02em;
-    }
-
-    .player{
-      flex:0 0 auto;
-      display:grid;
-      grid-template-columns:170px minmax(0,1fr);
-      gap:26px;
-      align-items:center;
-      padding:18px;
-      border:1px solid var(--border);
-      border-radius:27px;
       background:
-        linear-gradient(135deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
-      backdrop-filter:blur(25px) saturate(125%);
-      -webkit-backdrop-filter:blur(25px) saturate(125%);
+        linear-gradient(
+          90deg,
+          var(--rose),
+          transparent
+        );
+    }
+
+    .mark {
+      color: var(--rose);
+
+      font-size: 22px;
+
+      line-height: 1;
+
+      animation:
+        heartbeat 3s ease-in-out infinite;
+
+      text-shadow:
+        0 0 22px rgba(255, 157, 181, .45);
+    }
+
+    @keyframes heartbeat {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: .72;
+      }
+
+      50% {
+        transform: scale(1.13);
+        opacity: 1;
+      }
+    }
+
+    /* =========================================
+       MAIN
+    ========================================== */
+
+    .main {
+      width: min(920px, 100%);
+
+      min-height: 0;
+
+      flex: 1;
+
+      margin: 0 auto;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* =========================================
+       TITEL
+    ========================================== */
+
+    .hero {
+      flex: 0 0 auto;
+
+      text-align: center;
+
+      padding:
+        6px 0 18px;
+    }
+
+    .title {
+      margin: 0;
+
+      font-size:
+        clamp(
+          34px,
+          6.2vw,
+          74px
+        );
+
+      line-height: 1.02;
+
+      letter-spacing: -.05em;
+
+      font-weight: 520;
+
+      text-wrap: balance;
+
+      text-shadow:
+        0 15px 55px rgba(0,0,0,.35);
+    }
+
+    .subtitle {
+      margin: 11px 0 0;
+
+      color: var(--muted);
+
+      font-size:
+        clamp(
+          13px,
+          2vw,
+          17px
+        );
+
+      font-weight: 300;
+    }
+
+    /* =========================================
+       PLAYER
+    ========================================== */
+
+    .player {
+      flex: 0 0 auto;
+
+      display: grid;
+
+      grid-template-columns:
+        170px
+        minmax(0, 1fr);
+
+      gap: 26px;
+
+      align-items: center;
+
+      padding: 18px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 27px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,.075),
+          rgba(255,255,255,.025)
+        );
+
+      backdrop-filter:
+        blur(25px)
+        saturate(125%);
+
+      -webkit-backdrop-filter:
+        blur(25px)
+        saturate(125%);
+
       box-shadow:
-        0 30px 90px rgba(0,0,0,.38),
-        inset 0 1px rgba(255,255,255,.055);
+        0 30px 90px rgba(0,0,0,.40),
+        inset 0 1px rgba(255,255,255,.06);
     }
 
-    .cover{
-      width:170px;
-      aspect-ratio:1;
-      border-radius:21px;
-      overflow:hidden;
-      position:relative;
-      border:1px solid rgba(255,255,255,.12);
+    /* =========================================
+       COVER
+    ========================================== */
+
+    .cover {
+      width: 170px;
+
+      aspect-ratio: 1;
+
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 21px;
+
+      border:
+        1px solid rgba(255,255,255,.12);
+
       background:
-        radial-gradient(circle at 66% 27%,rgba(255,219,197,.85),transparent 8%),
-        radial-gradient(circle at 64% 30%,rgba(255,163,149,.20),transparent 22%),
-        linear-gradient(150deg,#33141e 0%,#20101a 43%,#09080d 100%);
-      box-shadow:0 22px 50px rgba(0,0,0,.42);
+
+        radial-gradient(
+          circle at 67% 27%,
+          rgba(255,220,199,.85),
+          transparent 8%
+        ),
+
+        radial-gradient(
+          circle at 64% 32%,
+          rgba(255,160,180,.20),
+          transparent 22%
+        ),
+
+        linear-gradient(
+          150deg,
+          #35141f 0%,
+          #21101a 45%,
+          #09080d 100%
+        );
+
+      box-shadow:
+        0 22px 50px rgba(0,0,0,.43);
     }
 
-    .cover:before{
-      content:"";
-      position:absolute;
-      inset:22% 8% auto;
-      height:44%;
-      border-radius:50%;
-      background:radial-gradient(circle,rgba(255,208,184,.55),transparent 63%);
-      filter:blur(9px);
-      opacity:.8;
-    }
-    .cover:after{
-      content:"♡";
-      position:absolute;
-      right:13px;
-      bottom:7px;
-      font-size:29px;
-      color:rgba(255,222,224,.86);
-      text-shadow:0 0 24px rgba(255,145,172,.72);
+    .cover::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 20% 7% auto;
+
+      height: 44%;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(255,210,185,.55),
+          transparent 65%
+        );
+
+      filter:
+        blur(9px);
+
+      opacity: .82;
     }
 
-    .song-label{
-      margin-bottom:6px;
-      color:var(--muted2);
-      font-size:10px;
-      letter-spacing:.2em;
-      text-transform:uppercase;
+    .cover::after {
+
+      content: "♡";
+
+      position: absolute;
+
+      right: 13px;
+      bottom: 7px;
+
+      font-size: 29px;
+
+      color:
+        rgba(255,224,226,.86);
+
+      text-shadow:
+        0 0 24px rgba(255,145,172,.72);
     }
 
-    .song-title{
-      font-size:clamp(21px,3vw,28px);
-      font-weight:500;
-      letter-spacing:-.02em;
+    /* =========================================
+       SONG INFORMATION
+    ========================================== */
+
+    .song-label {
+
+      margin-bottom: 6px;
+
+      color:
+        var(--muted-soft);
+
+      font-size: 10px;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
     }
 
-    .song-sub{
-      margin-top:5px;
-      color:var(--muted);
-      font-size:13px;
+    .song-title {
+
+      font-size:
+        clamp(
+          21px,
+          3vw,
+          28px
+        );
+
+      font-weight: 500;
+
+      letter-spacing: -.02em;
     }
 
-    .progress-wrap{
-      margin-top:17px;
-      user-select:none;
-      touch-action:none;
-      cursor:pointer;
+    .song-sub {
+
+      margin-top: 5px;
+
+      color: var(--muted);
+
+      font-size: 13px;
     }
 
-    .progress{
-      position:relative;
-      height:20px;
-      display:flex;
-      align-items:center;
+    /* =========================================
+       FORTSCHRITTSBALKEN
+    ========================================== */
+
+    .progress-wrap {
+
+      position: relative;
+
+      margin-top: 17px;
+
+      user-select: none;
+
+      touch-action: none;
+
+      cursor: pointer;
     }
 
-    .progress-bg{
-      position:absolute;
-      inset-inline:0;
-      height:4px;
-      border-radius:999px;
-      background:rgba(255,255,255,.10);
+    .progress {
+
+      position: relative;
+
+      height: 20px;
+
+      display: flex;
+
+      align-items: center;
     }
 
-    .progress-fill{
-      position:absolute;
-      left:0;
-      width:0;
-      height:4px;
-      border-radius:999px;
-      background:linear-gradient(90deg,var(--rose),var(--gold));
-      box-shadow:0 0 18px rgba(255,171,189,.48);
+    .progress-bg {
+
+      position: absolute;
+
+      left: 0;
+      right: 0;
+
+      height: 4px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(255,255,255,.10);
     }
 
-    .progress-dot{
-      position:absolute;
-      left:0;
-      width:12px;height:12px;
-      transform:translateX(-50%);
-      border-radius:50%;
-      background:#fff;
-      box-shadow:0 0 0 4px rgba(255,179,192,.10),0 4px 14px rgba(0,0,0,.3);
+    .progress-fill {
+
+      position: absolute;
+
+      left: 0;
+
+      width: 0%;
+
+      height: 4px;
+
+      border-radius: 999px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--rose),
+          var(--gold)
+        );
+
+      box-shadow:
+        0 0 18px rgba(255,171,189,.48);
     }
 
-    .times{
-      display:flex;
-      justify-content:space-between;
-      margin-top:4px;
-      color:rgba(255,255,255,.40);
-      font-size:10px;
-      font-variant-numeric:tabular-nums;
+    .progress-dot {
+
+      position: absolute;
+
+      left: 0;
+
+      width: 12px;
+      height: 12px;
+
+      transform:
+        translateX(-50%);
+
+      border-radius: 50%;
+
+      background: #fff;
+
+      box-shadow:
+        0 0 0 4px
+        rgba(255,179,192,.10),
+
+        0 4px 14px
+        rgba(0,0,0,.30);
     }
 
-    .controls{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:15px;
-      margin-top:6px;
+    .times {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      margin-top: 4px;
+
+      color:
+        rgba(255,255,255,.40);
+
+      font-size: 10px;
+
+      font-variant-numeric:
+        tabular-nums;
     }
 
-    .control{
-      width:40px;height:40px;
-      border-radius:50%;
-      border:1px solid rgba(255,255,255,.08);
-      color:rgba(255,255,255,.86);
-      background:rgba(255,255,255,.04);
-      cursor:pointer;
-      transition:transform .22s ease,background .22s ease;
-      display:grid;
-      place-items:center;
-    }
-    .control:hover{background:rgba(255,255,255,.09);transform:translateY(-2px)}
-    .control:active{transform:scale(.94)}
+    /* =========================================
+       CONTROLS
+    ========================================== */
 
-    .play{
-      width:57px;height:57px;
-      border-radius:50%;
-      border:1px solid rgba(255,180,194,.60);
-      color:#fff3f0;
-      background:linear-gradient(180deg,rgba(255,255,255,.13),rgba(255,255,255,.055));
+    .controls {
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      gap: 15px;
+
+      margin-top: 6px;
+    }
+
+    .control {
+
+      width: 40px;
+      height: 40px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 50%;
+
+      border:
+        1px solid
+        rgba(255,255,255,.08);
+
+      color:
+        rgba(255,255,255,.86);
+
+      background:
+        rgba(255,255,255,.04);
+
+      cursor: pointer;
+
+      transition:
+        transform .22s ease,
+        background .22s ease;
+    }
+
+    .control:hover {
+
+      background:
+        rgba(255,255,255,.09);
+
+      transform:
+        translateY(-2px);
+    }
+
+    .control:active {
+
+      transform:
+        scale(.94);
+    }
+
+    .play {
+
+      width: 57px;
+      height: 57px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 50%;
+
+      border:
+        1px solid
+        rgba(255,180,194,.60);
+
+      color:
+        #fff3f0;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.13),
+          rgba(255,255,255,.055)
+        );
+
       box-shadow:
         0 0 0 6px rgba(255,180,192,.025),
         0 0 34px rgba(255,160,180,.14);
-      cursor:pointer;
-      display:grid;
-      place-items:center;
-      transition:transform .25s var(--ease),box-shadow .25s var(--ease);
-    }
-    .play:hover{
-      transform:scale(1.05);
-      box-shadow:
-        0 0 0 8px rgba(255,180,192,.035),
-        0 0 44px rgba(255,160,180,.24);
-    }
-    .play:active{transform:scale(.95)}
 
-    .hint{
-      min-height:15px;
-      margin-top:5px;
-      text-align:center;
-      color:rgba(255,255,255,.27);
-      font-size:10px;
-    }
+      cursor: pointer;
 
-    .lyrics-card{
-      min-height:0;
-      flex:1;
-      margin-top:12px;
-      border:1px solid rgba(255,255,255,.065);
-      border-radius:27px;
-      background:rgba(255,255,255,.024);
-      backdrop-filter:blur(18px);
-      -webkit-backdrop-filter:blur(18px);
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-    }
-
-    .lyrics-top{
-      flex:0 0 auto;
-      display:flex;
-      justify-content:space-between;
-      padding:12px 17px;
-      font-size:9px;
-      text-transform:uppercase;
-      letter-spacing:.22em;
-      color:rgba(255,255,255,.30);
-    }
-
-    .lyrics{
-      flex:1;
-      min-height:0;
-      overflow-y:auto;
-      overscroll-behavior:contain;
-      scrollbar-width:thin;
-      scrollbar-color:rgba(255,175,190,.35) transparent;
-      padding:90px 18px 58vh;
-      mask-image:linear-gradient(to bottom,transparent 0,#000 12%,#000 87%,transparent 100%);
-      -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 12%,#000 87%,transparent 100%);
-    }
-
-    .lyrics::-webkit-scrollbar{width:5px}
-    .lyrics::-webkit-scrollbar-thumb{
-      background:linear-gradient(var(--rose),var(--gold));
-      border-radius:999px;
-    }
-
-    .line{
-      max-width:760px;
-      margin:0 auto;
-      padding:13px 0;
-      text-align:center;
-      color:rgba(255,255,255,.32);
-      font-size:clamp(17px,2.25vw,24px);
-      line-height:1.55;
-      font-weight:300;
-      opacity:.38;
-      transform:translateY(14px) scale(.985);
-      filter:blur(.65px);
       transition:
-        opacity .58s var(--ease),
-        transform .58s var(--ease),
-        color .58s ease,
-        filter .58s ease,
-        text-shadow .58s ease;
-      cursor:pointer;
+        transform .25s var(--ease),
+        box-shadow .25s var(--ease);
     }
 
-    .line.near{opacity:.58}
-    .line.active{
-      opacity:1;
-      color:#fff1ee;
-      transform:translateY(0) scale(1.045);
-      filter:blur(0);
-      text-shadow:0 0 27px rgba(255,174,190,.22);
+    .play:hover {
+
+      transform:
+        scale(1.06);
+
+      box-shadow:
+        0 0 0 8px
+        rgba(255,180,192,.035),
+
+        0 0 44px
+        rgba(255,160,180,.25);
     }
 
-    .divider{
-      width:62px;
-      height:1px;
-      margin:11px auto 13px;
-      background:linear-gradient(90deg,transparent,rgba(255,184,193,.38),transparent);
+    .play:active {
+
+      transform:
+        scale(.95);
     }
 
-    .ending{
-      text-align:center;
-      padding-top:20px;
-      color:rgba(255,255,255,.25);
-      font-size:11px;
-      letter-spacing:.10em;
+    .hint {
+
+      min-height: 14px;
+
+      margin-top: 5px;
+
+      color:
+        rgba(255,255,255,.25);
+
+      font-size: 10px;
+
+      text-align: center;
     }
 
-    .ending strong{
-      display:block;
-      margin-top:5px;
-      font-family:Georgia,serif;
-      font-style:italic;
-      font-size:27px;
-      font-weight:400;
-      color:rgba(255,185,194,.85);
-      letter-spacing:0;
+    .error {
+
+      min-height: 14px;
+
+      text-align: center;
+
+      color:
+        #ffb6c0;
+
+      font-size: 10px;
     }
 
-    .error{
-      margin-top:4px;
-      color:#ffb5bd;
-      font-size:10px;
-      text-align:center;
-      min-height:14px;
+    /* =========================================
+       LYRICS CARD
+    ========================================== */
+
+    .lyrics-card {
+
+      flex: 1;
+
+      min-height: 0;
+
+      display: flex;
+
+      flex-direction: column;
+
+      overflow: hidden;
+
+      margin-top: 12px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.065);
+
+      border-radius: 27px;
+
+      background:
+        rgba(255,255,255,.024);
+
+      backdrop-filter:
+        blur(18px);
+
+      -webkit-backdrop-filter:
+        blur(18px);
     }
 
-    .sr-only{
-      position:absolute!important;
-      width:1px!important;
-      height:1px!important;
-      padding:0!important;
-      margin:-1px!important;
-      overflow:hidden!important;
-      clip:rect(0,0,0,0)!important;
-      white-space:nowrap!important;
-      border:0!important;
+    .lyrics-top {
+
+      flex: 0 0 auto;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      padding:
+        12px 17px;
+
+      color:
+        rgba(255,255,255,.30);
+
+      font-size: 9px;
+
+      letter-spacing: .22em;
+
+      text-transform: uppercase;
     }
 
-    @media (max-width:760px){
-      .page{
-        padding-left:9px;
-        padding-right:9px;
+    /* =========================================
+       LYRICS SCROLL
+    ========================================== */
+
+    .lyrics {
+
+      flex: 1;
+
+      min-height: 0;
+
+      overflow-y: auto;
+
+      overscroll-behavior: contain;
+
+      scrollbar-width: thin;
+
+      scrollbar-color:
+        rgba(255,175,190,.35)
+        transparent;
+
+      padding:
+        72px
+        18px
+        55vh;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          transparent 0%,
+          #000 12%,
+          #000 86%,
+          transparent 100%
+        );
+
+      -webkit-mask-image:
+        linear-gradient(
+          to bottom,
+          transparent 0%,
+          #000 12%,
+          #000 86%,
+          transparent 100%
+        );
+    }
+
+    .lyrics::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .lyrics::-webkit-scrollbar-thumb {
+
+      background:
+        linear-gradient(
+          var(--rose),
+          var(--gold)
+        );
+
+      border-radius:
+        999px;
+    }
+
+    /* =========================================
+       EINZELNE LYRIC ZEILE
+    ========================================== */
+
+    .line {
+
+      position: relative;
+
+      max-width: 760px;
+
+      margin: 0 auto;
+
+      padding: 10px 0;
+
+      text-align: center;
+
+      color:
+        rgba(255,255,255,.29);
+
+      font-size:
+        clamp(
+          17px,
+          2.25vw,
+          24px
+        );
+
+      line-height: 1.45;
+
+      font-weight: 300;
+
+      opacity: .34;
+
+      transform:
+        translateY(22px)
+        scale(.975);
+
+      filter:
+        blur(1px);
+
+      transition:
+        opacity .42s var(--ease),
+        transform .48s var(--ease),
+        color .42s ease,
+        filter .42s ease,
+        text-shadow .42s ease;
+      
+      cursor: pointer;
+    }
+
+    /* nächste Zeile schon sichtbar */
+
+    .line.near {
+
+      opacity: .62;
+
+      transform:
+        translateY(7px)
+        scale(.995);
+
+      filter:
+        blur(.25px);
+    }
+
+    /* aktive Zeile */
+
+    .line.active {
+
+      opacity: 1;
+
+      color:
+        #fff2ef;
+
+      transform:
+        translateY(0)
+        scale(1.065);
+
+      filter:
+        blur(0);
+
+      text-shadow:
+        0 0 14px
+        rgba(255,172,190,.25),
+
+        0 0 35px
+        rgba(255,172,190,.12);
+    }
+
+    /* leicht leuchtender Punkt neben aktiver Zeile */
+
+    .line.active::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: -22px;
+
+      top: 50%;
+
+      width: 5px;
+      height: 5px;
+
+      transform:
+        translateY(-50%);
+
+      border-radius: 50%;
+
+      background:
+        var(--rose);
+
+      box-shadow:
+        0 0 14px
+        rgba(255,150,175,.9);
+
+      animation:
+        lyricDot 1.8s ease-in-out infinite;
+    }
+
+    @keyframes lyricDot {
+
+      0%,100% {
+        transform:
+          translateY(-50%)
+          scale(.75);
+
+        opacity: .55;
       }
-      .topbar{padding-bottom:10px}
-      .eyebrow{
-        font-size:8.5px;
-        letter-spacing:.20em;
-        gap:8px;
+
+      50% {
+        transform:
+          translateY(-50%)
+          scale(1.2);
+
+        opacity: 1;
       }
-      .eyebrow:before{width:22px}
-      .hero{padding-bottom:10px}
-      .title{font-size:clamp(30px,9vw,44px)}
-      .subtitle{font-size:12px}
-      .player{
-        grid-template-columns:1fr;
-        gap:12px;
-        padding:13px;
-        border-radius:22px;
-      }
-      .cover{
-        width:min(160px,47vw);
-        margin:0 auto;
-      }
-      .song-info{text-align:center}
-      .song-label{font-size:9px}
-      .song-title{font-size:20px}
-      .song-sub{font-size:12px}
-      .lyrics-card{border-radius:22px;margin-top:8px}
-      .lyrics-top{padding:10px 13px}
-      .lyrics{
-        padding:85px 10px 55vh;
-      }
-      .line{
-        font-size:16px;
-        padding:13px 4px;
-      }
-      .control{width:37px;height:37px}
-      .play{width:53px;height:53px}
     }
 
-    @media (max-height:700px) and (min-width:761px){
-      .hero{padding-bottom:10px}
-      .player{padding:13px}
-      .cover{width:140px}
-      .lyrics{padding-top:70px}
+    .divider {
+
+      width: 58px;
+
+      height: 1px;
+
+      margin:
+        9px auto 12px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255,184,193,.38),
+          transparent
+        );
     }
 
-    @media (prefers-reduced-motion:reduce){
-      *,*::before,*::after{
-        animation-duration:.001ms!important;
-        animation-iteration-count:1!important;
-        scroll-behavior:auto!important;
-        transition-duration:.001ms!important;
+    .ending {
+
+      text-align: center;
+
+      padding-top: 20px;
+
+      color:
+        rgba(255,255,255,.25);
+
+      font-size: 11px;
+
+      letter-spacing: .10em;
+    }
+
+    .ending strong {
+
+      display: block;
+
+      margin-top: 6px;
+
+      color:
+        rgba(255,185,194,.88);
+
+      font-family:
+        Georgia,
+        serif;
+
+      font-size: 27px;
+
+      font-style: italic;
+
+      font-weight: 400;
+
+      letter-spacing: 0;
+    }
+
+    /* =========================================
+       MOBILE
+    ========================================== */
+
+    @media (max-width: 760px) {
+
+      .page {
+        padding-left: 9px;
+        padding-right: 9px;
       }
-      canvas{display:none}
+
+      .topbar {
+        padding-bottom: 9px;
+      }
+
+      .eyebrow {
+
+        font-size: 8.5px;
+
+        letter-spacing: .20em;
+
+        gap: 8px;
+      }
+
+      .eyebrow::before {
+        width: 22px;
+      }
+
+      .hero {
+        padding-bottom: 9px;
+      }
+
+      .title {
+
+        font-size:
+          clamp(
+            30px,
+            9vw,
+            44px
+          );
+      }
+
+      .subtitle {
+        font-size: 12px;
+      }
+
+      .player {
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        padding: 13px;
+
+        border-radius: 22px;
+      }
+
+      .cover {
+
+        width:
+          min(
+            160px,
+            47vw
+          );
+
+        margin:
+          0 auto;
+      }
+
+      .song-info {
+        text-align: center;
+      }
+
+      .song-title {
+        font-size: 20px;
+      }
+
+      .song-sub {
+        font-size: 12px;
+      }
+
+      .lyrics-card {
+
+        margin-top: 8px;
+
+        border-radius: 22px;
+      }
+
+      .lyrics-top {
+        padding: 10px 13px;
+      }
+
+      .lyrics {
+
+        padding:
+          60px
+          10px
+          50vh;
+      }
+
+      .line {
+
+        font-size: 16px;
+
+        line-height: 1.42;
+
+        padding:
+          10px 4px;
+      }
+
+      .line.active {
+        transform:
+          scale(1.035);
+      }
+
+      .line.active::before {
+        left: -10px;
+      }
+
+      .control {
+        width: 37px;
+        height: 37px;
+      }
+
+      .play {
+        width: 53px;
+        height: 53px;
+      }
+    }
+
+    /* =========================================
+       REDUCED MOTION
+    ========================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+
+        animation-duration:
+          .001ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        scroll-behavior:
+          auto !important;
+
+        transition-duration:
+          .001ms !important;
+      }
+
+      canvas {
+        display: none;
+      }
     }
   </style>
 </head>
 
 <body>
-  <canvas id="nebula"></canvas>
-  <canvas id="stars"></canvas>
-  <canvas id="petals"></canvas>
-  <canvas id="hearts"></canvas>
 
-  <div class="page">
-    <header class="topbar">
-      <div class="eyebrow">Septemberlicht · Zwei Jahre</div>
-      <div class="mark" aria-hidden="true">♡</div>
-    </header>
+<canvas id="nebula"></canvas>
+<canvas id="stars"></canvas>
+<canvas id="petals"></canvas>
+<canvas id="hearts"></canvas>
 
-    <main class="main">
-      <section class="hero">
-        <h1 class="title">Zwei Jahre an deiner Seite</h1>
-        <p class="subtitle">Spätes Septemberlicht</p>
-      </section>
 
-      <section class="player" aria-label="Musikplayer">
-        <div class="cover" aria-label="Cover"></div>
+<div class="page">
 
-        <div>
-          <div class="song-label">Unser Song</div>
-          <div class="song-title">Septemberlicht</div>
-          <div class="song-sub">Für zwei Jahre. Für immer wir.</div>
+  <!-- ========================================
+       HEADER
+  ========================================= -->
 
-          <div class="progress-wrap" id="progressWrap">
-            <div class="progress" aria-hidden="true">
-              <div class="progress-bg"></div>
-              <div class="progress-fill" id="progressFill"></div>
-              <div class="progress-dot" id="progressDot"></div>
-            </div>
-            <div class="times">
-              <span id="currentTime">0:00</span>
-              <span id="totalTime">0:00</span>
-            </div>
+  <header class="topbar">
+
+    <div class="eyebrow">
+      Septemberlicht · Zwei Jahre
+    </div>
+
+    <div class="mark">
+      ♡
+    </div>
+
+  </header>
+
+
+  <!-- ========================================
+       MAIN
+  ========================================= -->
+
+  <main class="main">
+
+    <!-- TITEL -->
+
+    <section class="hero">
+
+      <h1 class="title">
+        Zwei Jahre an deiner Seite
+      </h1>
+
+      <p class="subtitle">
+        Spätes Septemberlicht
+      </p>
+
+    </section>
+
+
+    <!-- ======================================
+         PLAYER
+    ======================================= -->
+
+    <section class="player">
+
+      <div class="cover"></div>
+
+
+      <div>
+
+        <div class="song-label">
+          Unser Song
+        </div>
+
+        <div class="song-title">
+          Septemberlicht
+        </div>
+
+        <div class="song-sub">
+          Für zwei Jahre. Für immer wir.
+        </div>
+
+
+        <div
+          class="progress-wrap"
+          id="progressWrap"
+        >
+
+          <div class="progress">
+
+            <div class="progress-bg"></div>
+
+            <div
+              class="progress-fill"
+              id="progressFill"
+            ></div>
+
+            <div
+              class="progress-dot"
+              id="progressDot"
+            ></div>
+
           </div>
 
-          <div class="controls">
-            <button class="control" id="back" type="button" aria-label="10 Sekunden zurück">↶</button>
 
-            <button class="play" id="play" type="button" aria-label="Song abspielen">
-              <svg id="playIcon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M8 5v14l11-7z"></path>
-              </svg>
-              <svg id="pauseIcon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none">
-                <path d="M6 5h4v14H6zm8 0h4v14h-4z"></path>
-              </svg>
-            </button>
+          <div class="times">
 
-            <button class="control" id="forward" type="button" aria-label="10 Sekunden vor">↷</button>
+            <span id="currentTime">
+              0:00
+            </span>
+
+            <span id="totalTime">
+              0:00
+            </span>
+
           </div>
 
-          <div class="hint" id="hint"></div>
-          <div class="error" id="error"></div>
-        </div>
-      </section>
-
-      <section class="lyrics-card">
-        <div class="lyrics-top">
-          <span>Lyrics</span>
-          <span>Live Sync</span>
         </div>
 
-        <div class="lyrics" id="lyrics" aria-label="Songtext"></div>
-      </section>
-    </main>
-  </div>
 
-  <!--
-    =========================================================
-    MP3 EINTRAGEN
-    =========================================================
-    Lege die Datei als "song.mp3" direkt neben diese index.html.
-    Dann funktioniert der Standardwert automatisch.
+        <div class="controls">
 
-    Beispiel für eine Unterordner-Datei:
-    audio/song.mp3
+          <button
+            class="control"
+            id="back"
+            type="button"
+            aria-label="10 Sekunden zurück"
+          >
+            ↶
+          </button>
 
-    Beispiel für eine absolute URL:
-    https://DEINNAME.github.io/Septemberlicht/song.mp3
-  -->
-  <audio id="audio" preload="metadata">
-    <source id="audioSource" src="song.mp3" type="audio/mpeg">
-  </audio>
 
-  <script>
-    /* =====================================================
-       1) AUDIO
-       ===================================================== */
-    const AUDIO_URL = "song.mp3";
+          <button
+            class="play"
+            id="play"
+            type="button"
+            aria-label="Song abspielen"
+          >
 
-    /*
-      2) LYRICS / ZEITMARKEN
+            <svg
+              id="playIcon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
 
-      "time" = Sekunden, bei denen die Zeile beginnt.
-      Die vorhandenen alten Startpunkte wurden übernommen.
-      Die dazwischenliegenden Werte sind vorläufig und können
-      später exakt angepasst werden.
-    */
-    const LYRICS = [
-      { time: 5,   text: "Zusammen auf dem Dach, spätes Septemberlicht" },
-      { time: 12,  text: "Zwei Jahre an deiner Seite, mehr brauche ich nicht" },
-      { time: 19,  text: "Der Wind weht leise, du schaust mich an" },
-      { time: 26,  text: "Und ich denke zurück, wie alles begann:" },
+              <path
+                d="M8 5v14l11-7z"
+              />
 
-      { time: 33,  text: "'Cause we fell in love in September" },
-      { time: 38,  text: "On the twenty-first day" },
-      { time: 43,  text: "Looking up at the stars" },
-      { time: 48,  text: "Just the way that I like it" },
+            </svg>
 
-      { time: 53,  text: "моя любимая, mein ganzes Glück" },
-      { time: 59,  text: "Ich schau nur nach vorn, nie wieder zurück" },
-      { time: 66,  text: "Du bist meine Welt, mein Lieblingsort" },
-      { time: 73,  text: "Mit dir bin ich Zuhause, genau hier und sofort" },
 
-      { time: 82,  text: "Warmes Licht am Abend, der Herbst fängt an" },
-      { time: 89,  text: "Bin so stolz, dass ich dich meine Freundin nennen kann" },
-      { time: 97,  text: "Zwei Jahre vergangen, fühlt sich immer noch neu an" },
-      { time: 105, text: "Der beste Weg, den man zusammen gehen kann" },
+            <svg
+              id="pauseIcon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              style="display:none"
+            >
 
-      { time: 114, text: "'Cause we fell in love in September" },
-      { time: 119, text: "On the twenty-first day" },
-      { time: 124, text: "Looking up at the stars" },
-      { time: 129, text: "Just the way that I like it" },
+              <path
+                d="M6 5h4v14H6zm8 0h4v14h-4z"
+              />
 
-      { time: 134, text: "моя любимая, mein ganzes Glück" },
-      { time: 140, text: "Ich schau nur nach vorn, nie wieder zurück" },
-      { time: 147, text: "Du bist meine Welt, mein Lieblingsort" },
-      { time: 154, text: "Mit dir bin ich Zuhause, genau hier und sofort" },
+            </svg>
 
-      { time: 164, text: "со́лнышко, du bist mein Licht" },
-      { time: 171, text: "Zwei Jahre mit dir – ein Ende gibt es nicht" }
-    ];
+          </button>
 
-    const audio = document.getElementById("audio");
-    const source = document.getElementById("audioSource");
-    const playBtn = document.getElementById("play");
-    const playIcon = document.getElementById("playIcon");
-    const pauseIcon = document.getElementById("pauseIcon");
-    const backBtn = document.getElementById("back");
-    const forwardBtn = document.getElementById("forward");
-    const progressWrap = document.getElementById("progressWrap");
-    const progressFill = document.getElementById("progressFill");
-    const progressDot = document.getElementById("progressDot");
-    const currentTimeEl = document.getElementById("currentTime");
-    const totalTimeEl = document.getElementById("totalTime");
-    const lyricsRoot = document.getElementById("lyrics");
-    const hint = document.getElementById("hint");
-    const errorEl = document.getElementById("error");
 
-    source.src = AUDIO_URL;
+          <button
+            class="control"
+            id="forward"
+            type="button"
+            aria-label="10 Sekunden vor"
+          >
+            ↷
+          </button>
 
-    function formatTime(seconds) {
-      if (!Number.isFinite(seconds) || seconds < 0) return "0:00";
-      const m = Math.floor(seconds / 60);
-      const s = Math.floor(seconds % 60).toString().padStart(2, "0");
-      return `${m}:${s}`;
-    }
+        </div>
 
-    function setPlayingUI(isPlaying) {
-      playIcon.style.display = isPlaying ? "none" : "block";
-      pauseIcon.style.display = isPlaying ? "block" : "none";
-      playBtn.setAttribute("aria-label", isPlaying ? "Song pausieren" : "Song abspielen");
-    }
 
-    function renderLyrics() {
-      lyricsRoot.innerHTML = "";
+        <div
+          class="hint"
+          id="hint"
+        ></div>
 
-      LYRICS.forEach((item, index) => {
-        const line = document.createElement("div");
-        line.className = "line";
-        line.dataset.index = index;
-        line.textContent = item.text;
+        <div
+          class="error"
+          id="error"
+        ></div>
 
-        line.addEventListener("click", () => {
-          audio.currentTime = item.time;
-          updateLyrics(true);
-        });
+      </div>
 
-        lyricsRoot.appendChild(line);
+    </section>
 
-        if ([3, 7, 11, 15, 19, 23].includes(index)) {
-          const divider = document.createElement("div");
-          divider.className = "divider";
-          divider.setAttribute("aria-hidden", "true");
-          lyricsRoot.appendChild(divider);
-        }
-      });
 
-      const end = document.createElement("div");
-      end.className = "ending";
-      end.innerHTML = `Genau hier und sofort<strong>Für immer wir ♡</strong>`;
-      lyricsRoot.appendChild(end);
-    }
+    <!-- ======================================
+         LYRICS
+    ======================================= -->
 
-    let lastActiveIndex = -1;
+    <section class="lyrics-card">
 
-    function getActiveIndex(time) {
-      let active = -1;
-      for (let i = 0; i < LYRICS.length; i++) {
-        if (time >= LYRICS[i].time) active = i;
-        else break;
-      }
-      return active;
-    }
+      <div class="lyrics-top">
 
-    function updateLyrics(forceScroll = false) {
-      const activeIndex = getActiveIndex(audio.currentTime);
-      const nodes = lyricsRoot.querySelectorAll(".line");
+        <span>
+          Lyrics
+        </span>
 
-      nodes.forEach((node, index) => {
-        node.classList.toggle("active", index === activeIndex);
-        node.classList.toggle("near", Math.abs(index - activeIndex) === 1);
-      });
+        <span>
+          Live Sync
+        </span>
 
-      if (activeIndex >= 0 && (activeIndex !== lastActiveIndex || forceScroll)) {
-        const activeNode = lyricsRoot.querySelector(
-          `.line[data-index="${activeIndex}"]`
+      </div>
+
+
+      <div
+        class="lyrics"
+        id="lyrics"
+      ></div>
+
+    </section>
+
+  </main>
+
+</div>
+
+
+<!-- =========================================
+     AUDIO
+
+     DIE MP3 MUSS SO HEISSEN:
+
+     song.mp3
+
+     und direkt neben index.html liegen.
+========================================= -->
+
+<audio
+  id="audio"
+  preload="metadata"
+>
+
+  <source
+    id="audioSource"
+    src="song.mp3"
+    type="audio/mpeg"
+  >
+
+</audio>
+
+
+<script>
+
+/* =====================================================
+   AUDIO
+===================================================== */
+
+const AUDIO_URL =
+  "song.mp3";
+
+
+/* =====================================================
+   LYRICS
+
+   Die ersten Zeitpunkte basieren auf deinen bisherigen
+   Angaben.
+
+   Die neuen Zeiten sind bewusst kompakter gesetzt,
+   damit der Text insgesamt schneller läuft.
+===================================================== */
+
+const LYRICS = [
+
+  {
+    time: 5,
+    text:
+      "Zusammen auf dem Dach, spätes Septemberlicht"
+  },
+
+  {
+    time: 11,
+    text:
+      "Zwei Jahre an deiner Seite, mehr brauche ich nicht"
+  },
+
+  {
+    time: 17,
+    text:
+      "Der Wind weht leise, du schaust mich an"
+  },
+
+  {
+    time: 23,
+    text:
+      "Und ich denke zurück, wie alles begann:"
+  },
+
+
+  {
+    time: 29,
+    text:
+      "'Cause we fell in love in September"
+  },
+
+  {
+    time: 34,
+    text:
+      "On the twenty-first day"
+  },
+
+  {
+    time: 38,
+    text:
+      "Looking up at the stars"
+  },
+
+  {
+    time: 42,
+    text:
+      "Just the way that I like it"
+  },
+
+
+  {
+    time: 47,
+    text:
+      "моя любимая, mein ganzes Glück"
+  },
+
+  {
+    time: 53,
+    text:
+      "Ich schau nur nach vorn, nie wieder zurück"
+  },
+
+  {
+    time: 59,
+    text:
+      "Du bist meine Welt, mein Lieblingsort"
+  },
+
+  {
+    time: 65,
+    text:
+      "Mit dir bin ich Zuhause, genau hier und sofort"
+  },
+
+
+  {
+    time: 72,
+    text:
+      "Warmes Licht am Abend, der Herbst fängt an"
+  },
+
+  {
+    time: 79,
+    text:
+      "Bin so stolz, dass ich dich meine Freundin nennen kann"
+  },
+
+  {
+    time: 87,
+    text:
+      "Zwei Jahre vergangen, fühlt sich immer noch neu an"
+  },
+
+  {
+    time: 95,
+    text:
+      "Der beste Weg, den man zusammen gehen kann"
+  },
+
+
+  {
+    time: 103,
+    text:
+      "'Cause we fell in love in September"
+  },
+
+  {
+    time: 108,
+    text:
+      "On the twenty-first day"
+  },
+
+  {
+    time: 112,
+    text:
+      "Looking up at the stars"
+  },
+
+  {
+    time: 116,
+    text:
+      "Just the way that I like it"
+  },
+
+
+  {
+    time: 121,
+    text:
+      "моя любимая, mein ganzes Glück"
+  },
+
+  {
+    time: 127,
+    text:
+      "Ich schau nur nach vorn, nie wieder zurück"
+  },
+
+  {
+    time: 133,
+    text:
+      "Du bist meine Welt, mein Lieblingsort"
+  },
+
+  {
+    time: 139,
+    text:
+      "Mit dir bin ich Zuhause, genau hier und sofort"
+  },
+
+
+  {
+    time: 147,
+    text:
+      "со́лнышко, du bist mein Licht"
+  },
+
+  {
+    time: 154,
+    text:
+      "2 Jahre mit dir, ein Ende gibt es nicht"
+  }
+
+];
+
+
+/* =====================================================
+   ELEMENTE
+===================================================== */
+
+const audio =
+  document.getElementById(
+    "audio"
+  );
+
+const audioSource =
+  document.getElementById(
+    "audioSource"
+  );
+
+const playButton =
+  document.getElementById(
+    "play"
+  );
+
+const playIcon =
+  document.getElementById(
+    "playIcon"
+  );
+
+const pauseIcon =
+  document.getElementById(
+    "pauseIcon"
+  );
+
+const backButton =
+  document.getElementById(
+    "back"
+  );
+
+const forwardButton =
+  document.getElementById(
+    "forward"
+  );
+
+const progressWrap =
+  document.getElementById(
+    "progressWrap"
+  );
+
+const progressFill =
+  document.getElementById(
+    "progressFill"
+  );
+
+const progressDot =
+  document.getElementById(
+    "progressDot"
+  );
+
+const currentTime =
+  document.getElementById(
+    "currentTime"
+  );
+
+const totalTime =
+  document.getElementById(
+    "totalTime"
+  );
+
+const lyricsRoot =
+  document.getElementById(
+    "lyrics"
+  );
+
+const error =
+  document.getElementById(
+    "error"
+  );
+
+
+audioSource.src =
+  AUDIO_URL;
+
+
+/* =====================================================
+   ZEIT FORMAT
+===================================================== */
+
+function formatTime(seconds) {
+
+  if (
+    !Number.isFinite(seconds)
+    ||
+    seconds < 0
+  ) {
+
+    return "0:00";
+
+  }
+
+
+  const minutes =
+    Math.floor(
+      seconds / 60
+    );
+
+
+  const secs =
+    Math.floor(
+      seconds % 60
+    )
+    .toString()
+    .padStart(2, "0");
+
+
+  return (
+    minutes +
+    ":" +
+    secs
+  );
+
+}
+
+
+/* =====================================================
+   LYRICS ERSTELLEN
+===================================================== */
+
+function renderLyrics() {
+
+  lyricsRoot.innerHTML =
+    "";
+
+
+  LYRICS.forEach(
+    (item, index) => {
+
+      const line =
+        document.createElement(
+          "div"
         );
-        if (activeNode) {
-          activeNode.scrollIntoView({
-            behavior: forceScroll ? "smooth" : "smooth",
-            block: "center"
-          });
+
+
+      line.className =
+        "line";
+
+
+      line.dataset.index =
+        index;
+
+
+      line.textContent =
+        item.text;
+
+
+      /*
+       * Klickbare Lyrics
+       */
+
+      line.addEventListener(
+        "click",
+        () => {
+
+          audio.currentTime =
+            item.time;
+
+          updateLyrics(
+            true
+          );
+
         }
-        lastActiveIndex = activeIndex;
+      );
+
+
+      lyricsRoot.appendChild(
+        line
+      );
+
+
+      /*
+       * kleine Trennlinien
+       */
+
+      if (
+        index === 3 ||
+        index === 7 ||
+        index === 11 ||
+        index === 15 ||
+        index === 19 ||
+        index === 23
+      ) {
+
+        const divider =
+          document.createElement(
+            "div"
+          );
+
+
+        divider.className =
+          "divider";
+
+
+        lyricsRoot.appendChild(
+          divider
+        );
+
       }
+
+    }
+  );
+
+
+  /*
+   * Abschluss
+   */
+
+  const ending =
+    document.createElement(
+      "div"
+    );
+
+
+  ending.className =
+    "ending";
+
+
+  ending.innerHTML =
+    `
+      Genau hier und sofort
+      <strong>
+        Für immer wir ♡
+      </strong>
+    `;
+
+
+  lyricsRoot.appendChild(
+    ending
+  );
+
+}
+
+
+/* =====================================================
+   AKTIVE ZEILE
+===================================================== */
+
+let lastActive =
+  -1;
+
+
+function getActiveIndex(
+  time
+) {
+
+  let active =
+    -1;
+
+
+  for (
+    let i = 0;
+    i < LYRICS.length;
+    i++
+  ) {
+
+    if (
+      time >=
+      LYRICS[i].time
+    ) {
+
+      active =
+        i;
+
+    } else {
+
+      break;
+
     }
 
-    function updateProgress() {
-      const duration = audio.duration;
-      const current = audio.currentTime || 0;
+  }
 
-      currentTimeEl.textContent = formatTime(current);
-      totalTimeEl.textContent = formatTime(duration);
 
-      if (!Number.isFinite(duration) || duration <= 0) return;
+  return active;
 
-      const percent = Math.max(0, Math.min(100, (current / duration) * 100));
-      progressFill.style.width = `${percent}%`;
-      progressDot.style.left = `${percent}%`;
-      updateLyrics();
+}
+
+
+/* =====================================================
+   LYRICS UPDATE
+===================================================== */
+
+function updateLyrics(
+  forceScroll = false
+) {
+
+  const active =
+    getActiveIndex(
+      audio.currentTime
+    );
+
+
+  const lines =
+    lyricsRoot.querySelectorAll(
+      ".line"
+    );
+
+
+  lines.forEach(
+    (line, index) => {
+
+      const distance =
+        index - active;
+
+
+      line.classList.toggle(
+        "active",
+        index === active
+      );
+
+
+      line.classList.toggle(
+        "near",
+        Math.abs(distance) <= 1 &&
+        index !== active
+      );
+
+    }
+  );
+
+
+  /*
+   * Nur scrollen, wenn die Zeile
+   * tatsächlich gewechselt hat.
+   */
+
+  if (
+    active >= 0
+    &&
+    (
+      active !== lastActive
+      ||
+      forceScroll
+    )
+  ) {
+
+    const activeLine =
+      lyricsRoot.querySelector(
+        `.line[data-index="${active}"]`
+      );
+
+
+    if (activeLine) {
+
+      /*
+       * Schnellere, direktere Bewegung
+       */
+
+      activeLine.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
     }
 
-    async function playAudio() {
-      errorEl.textContent = "";
+
+    lastActive =
+      active;
+
+  }
+
+}
+
+
+/* =====================================================
+   PLAY BUTTON UI
+===================================================== */
+
+function setPlayingUI(
+  playing
+) {
+
+  playIcon.style.display =
+    playing
+      ? "none"
+      : "block";
+
+
+  pauseIcon.style.display =
+    playing
+      ? "block"
+      : "none";
+
+
+  playButton.setAttribute(
+    "aria-label",
+    playing
+      ? "Song pausieren"
+      : "Song abspielen"
+  );
+
+}
+
+
+/* =====================================================
+   PLAY / PAUSE
+===================================================== */
+
+playButton.addEventListener(
+  "click",
+  async () => {
+
+    if (
+      audio.paused
+    ) {
+
+      error.textContent =
+        "";
+
 
       try {
+
         await audio.play();
-      } catch (error) {
-        errorEl.textContent =
-          "Die MP3 konnte nicht geladen werden. Prüfe, ob song.mp3 neben index.html liegt.";
-        console.error(error);
+
       }
+
+      catch (err) {
+
+        console.error(
+          err
+        );
+
+
+        error.textContent =
+          "Die MP3 wurde nicht gefunden. Prüfe, ob song.mp3 neben index.html liegt.";
+
+      }
+
     }
 
-    playBtn.addEventListener("click", () => {
-      if (audio.paused) playAudio();
-      else audio.pause();
+    else {
+
+      audio.pause();
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   AUDIO EVENTS
+===================================================== */
+
+audio.addEventListener(
+  "play",
+  () => {
+
+    setPlayingUI(
+      true
+    );
+
+  }
+);
+
+
+audio.addEventListener(
+  "pause",
+  () => {
+
+    setPlayingUI(
+      false
+    );
+
+  }
+);
+
+
+audio.addEventListener(
+  "loadedmetadata",
+  () => {
+
+    totalTime.textContent =
+      formatTime(
+        audio.duration
+      );
+
+
+    updateProgress();
+
+  }
+);
+
+
+audio.addEventListener(
+  "durationchange",
+  updateProgress
+);
+
+
+audio.addEventListener(
+  "timeupdate",
+  updateProgress
+);
+
+
+audio.addEventListener(
+  "ended",
+  () => {
+
+    setPlayingUI(
+      false
+    );
+
+
+    audio.currentTime =
+      0;
+
+
+    lastActive =
+      -1;
+
+
+    /*
+     * wieder nach oben
+     */
+
+    lyricsRoot.scrollTo({
+      top: 0,
+      behavior: "smooth"
     });
 
-    audio.addEventListener("play", () => {
-      setPlayingUI(true);
-      hint.textContent = "";
-    });
 
-    audio.addEventListener("pause", () => {
-      setPlayingUI(false);
-    });
+    updateProgress();
 
-    audio.addEventListener("loadedmetadata", () => {
-      errorEl.textContent = "";
-      totalTimeEl.textContent = formatTime(audio.duration);
-      updateProgress();
-    });
+  }
+);
 
-    audio.addEventListener("timeupdate", updateProgress);
-    audio.addEventListener("durationchange", updateProgress);
 
-    audio.addEventListener("error", () => {
-      errorEl.textContent =
-        "Audio nicht gefunden. Dateiname und Groß-/Kleinschreibung prüfen: song.mp3";
-    });
+audio.addEventListener(
+  "error",
+  () => {
 
-    audio.addEventListener("ended", () => {
-      setPlayingUI(false);
-      audio.currentTime = 0;
-      lastActiveIndex = -1;
-      lyricsRoot.scrollTo({ top: 0, behavior: "smooth" });
-      updateProgress();
-    });
+    error.textContent =
+      "Audio nicht gefunden. Die Datei muss song.mp3 heißen.";
 
-    backBtn.addEventListener("click", () => {
-      audio.currentTime = Math.max(0, audio.currentTime - 10);
-    });
+  }
+);
 
-    forwardBtn.addEventListener("click", () => {
-      audio.currentTime = Math.min(
-        Number.isFinite(audio.duration) ? audio.duration : Infinity,
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+function updateProgress() {
+
+  const duration =
+    audio.duration;
+
+
+  const current =
+    audio.currentTime ||
+    0;
+
+
+  currentTime.textContent =
+    formatTime(
+      current
+    );
+
+
+  if (
+    !Number.isFinite(
+      duration
+    )
+    ||
+    duration <= 0
+  ) {
+
+    return;
+
+  }
+
+
+  const percent =
+    Math.max(
+      0,
+      Math.min(
+        100,
+        current /
+        duration *
+        100
+      )
+    );
+
+
+  progressFill.style.width =
+    percent + "%";
+
+
+  progressDot.style.left =
+    percent + "%";
+
+
+  totalTime.textContent =
+    formatTime(
+      duration
+    );
+
+
+  updateLyrics();
+
+}
+
+
+/* =====================================================
+   SEEK
+===================================================== */
+
+function seekFromPointer(
+  clientX
+) {
+
+  if (
+    !Number.isFinite(
+      audio.duration
+    )
+  ) {
+
+    return;
+
+  }
+
+
+  const rect =
+    progressWrap.getBoundingClientRect();
+
+
+  const ratio =
+    Math.max(
+      0,
+      Math.min(
+        1,
+        (
+          clientX -
+          rect.left
+        ) /
+        rect.width
+      )
+    );
+
+
+  audio.currentTime =
+    ratio *
+    audio.duration;
+
+}
+
+
+progressWrap.addEventListener(
+  "pointerdown",
+  event => {
+
+    seekFromPointer(
+      event.clientX
+    );
+
+
+    progressWrap.setPointerCapture?.(
+      event.pointerId
+    );
+
+  }
+);
+
+
+progressWrap.addEventListener(
+  "pointermove",
+  event => {
+
+    if (
+      event.buttons
+    ) {
+
+      seekFromPointer(
+        event.clientX
+      );
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   10 SEKUNDEN
+===================================================== */
+
+backButton.addEventListener(
+  "click",
+  () => {
+
+    audio.currentTime =
+      Math.max(
+        0,
+        audio.currentTime - 10
+      );
+
+  }
+);
+
+
+forwardButton.addEventListener(
+  "click",
+  () => {
+
+    audio.currentTime =
+      Math.min(
+        Number.isFinite(
+          audio.duration
+        )
+          ? audio.duration
+          : Infinity,
+
         audio.currentTime + 10
       );
-    });
 
-    function seekFromClientX(clientX) {
-      if (!Number.isFinite(audio.duration) || audio.duration <= 0) return;
+  }
+);
 
-      const rect = progressWrap.getBoundingClientRect();
-      const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
-      audio.currentTime = ratio * audio.duration;
-      updateProgress();
+
+/* =====================================================
+   LYRICS INITIALISIEREN
+===================================================== */
+
+renderLyrics();
+
+setPlayingUI(
+  false
+);
+
+
+/* =====================================================
+   ROMANTISCHER HINTERGRUND
+===================================================== */
+
+const nebulaCanvas =
+  document.getElementById(
+    "nebula"
+  );
+
+const starsCanvas =
+  document.getElementById(
+    "stars"
+  );
+
+const petalsCanvas =
+  document.getElementById(
+    "petals"
+  );
+
+const heartsCanvas =
+  document.getElementById(
+    "hearts"
+  );
+
+
+const nebula =
+  nebulaCanvas.getContext(
+    "2d"
+  );
+
+const stars =
+  starsCanvas.getContext(
+    "2d"
+  );
+
+const petals =
+  petalsCanvas.getContext(
+    "2d"
+  );
+
+const hearts =
+  heartsCanvas.getContext(
+    "2d"
+  );
+
+
+let width =
+  window.innerWidth;
+
+let height =
+  window.innerHeight;
+
+
+let dpr =
+  Math.max(
+    1,
+    Math.min(
+      2,
+      window.devicePixelRatio || 1
+    )
+  );
+
+
+let starData = [];
+let petalData = [];
+let heartData = [];
+let glowData = [];
+
+
+/* =====================================================
+   RESIZE
+===================================================== */
+
+function resizeCanvases() {
+
+  width =
+    window.innerWidth;
+
+  height =
+    window.innerHeight;
+
+
+  dpr =
+    Math.max(
+      1,
+      Math.min(
+        2,
+        window.devicePixelRatio || 1
+      )
+    );
+
+
+  [
+    nebulaCanvas,
+    starsCanvas,
+    petalsCanvas,
+    heartsCanvas
+  ].forEach(
+    canvas => {
+
+      canvas.width =
+        width *
+        dpr;
+
+      canvas.height =
+        height *
+        dpr;
+
+      canvas.style.width =
+        width +
+        "px";
+
+      canvas.style.height =
+        height +
+        "px";
+
     }
+  );
 
-    progressWrap.addEventListener("pointerdown", (event) => {
-      seekFromClientX(event.clientX);
-      progressWrap.setPointerCapture?.(event.pointerId);
-    });
 
-    progressWrap.addEventListener("pointermove", (event) => {
-      if (event.buttons) seekFromClientX(event.clientX);
-    });
+  [
+    nebula,
+    stars,
+    petals,
+    hearts
+  ].forEach(
+    context => {
 
-    renderLyrics();
-    setPlayingUI(false);
-
-    /* =====================================================
-       ROMANTISCHER HINTERGRUND
-       ===================================================== */
-
-    const nebula = document.getElementById("nebula");
-    const stars = document.getElementById("stars");
-    const petals = document.getElementById("petals");
-    const hearts = document.getElementById("hearts");
-
-    const nctx = nebula.getContext("2d");
-    const sctx = stars.getContext("2d");
-    const pctx = petals.getContext("2d");
-    const hctx = hearts.getContext("2d");
-
-    let W = window.innerWidth;
-    let H = window.innerHeight;
-    let DPR = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-
-    let starData = [];
-    let petalData = [];
-    let heartData = [];
-    let glowData = [];
-
-    function resizeCanvases() {
-      W = window.innerWidth;
-      H = window.innerHeight;
-      DPR = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-
-      [nebula, stars, petals, hearts].forEach(canvas => {
-        canvas.width = Math.floor(W * DPR);
-        canvas.height = Math.floor(H * DPR);
-        canvas.style.width = `${W}px`;
-        canvas.style.height = `${H}px`;
-      });
-
-      [nctx, sctx, pctx, hctx].forEach(ctx => {
-        ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-      });
-
-      createAmbientObjects();
-    }
-
-    function random(a, b) {
-      return a + Math.random() * (b - a);
-    }
-
-    function createAmbientObjects() {
-      starData = Array.from(
-        { length: Math.min(120, Math.floor(W / 7)) },
-        () => ({
-          x: random(0, W),
-          y: random(0, H),
-          r: random(.35, 1.5),
-          a: random(.16, .72),
-          speed: random(.03, .18),
-          phase: random(0, Math.PI * 2)
-        })
+      context.setTransform(
+        dpr,
+        0,
+        0,
+        dpr,
+        0,
+        0
       );
 
-      petalData = Array.from(
-        { length: Math.min(22, Math.floor(W / 48)) },
-        () => ({
-          x: random(0, W),
-          y: random(-H, H),
-          scale: random(.65, 1.7),
-          speed: random(.10, .35),
-          rotation: random(0, Math.PI * 2),
-          spin: random(-.012, .012),
-          sway: random(0, Math.PI * 2),
-          alpha: random(.12, .42)
-        })
-      );
-
-      glowData = Array.from({ length: 7 }, (_, i) => ({
-        x: random(-150, W + 150),
-        y: random(-150, H + 150),
-        r: random(120, 260),
-        dx: random(-.035, .035),
-        dy: random(-.025, .025),
-        type: i % 2 === 0 ? "rose" : "gold"
-      }));
-
-      heartData = [];
     }
+  );
 
-    function drawHeart(ctx, x, y, size, alpha, rotation) {
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate(rotation);
-      ctx.globalAlpha = alpha;
-      ctx.strokeStyle = "#ffb5c1";
-      ctx.lineWidth = 1.2;
-      ctx.shadowBlur = 15;
-      ctx.shadowColor = "rgba(255,150,175,.75)";
 
-      ctx.beginPath();
-      ctx.moveTo(0, size * .30);
-      ctx.bezierCurveTo(-size*.62, -size*.02, -size*.48, -size*.60, 0, -size*.30);
-      ctx.bezierCurveTo(size*.48, -size*.60, size*.62, -size*.02, 0, size*.30);
-      ctx.stroke();
+  createAmbientObjects();
 
-      ctx.restore();
-    }
+}
 
-    function drawFrame(t) {
-      nctx.clearRect(0, 0, W, H);
-      sctx.clearRect(0, 0, W, H);
-      pctx.clearRect(0, 0, W, H);
-      hctx.clearRect(0, 0, W, H);
 
-      glowData.forEach(g => {
-        g.x += g.dx;
-        g.y += g.dy;
+/* =====================================================
+   RANDOM
+===================================================== */
 
-        if (g.x < -g.r) g.x = W + g.r;
-        if (g.x > W + g.r) g.x = -g.r;
-        if (g.y < -g.r) g.y = H + g.r;
-        if (g.y > H + g.r) g.y = -g.r;
+function random(
+  min,
+  max
+) {
 
-        const grad = nctx.createRadialGradient(
-          g.x, g.y, 0, g.x, g.y, g.r
-        );
+  return (
+    min +
+    Math.random() *
+    (max - min)
+  );
 
-        grad.addColorStop(
-          0,
-          g.type === "rose"
-            ? "rgba(255,170,189,.09)"
-            : "rgba(240,207,159,.065)"
-        );
-        grad.addColorStop(1, "rgba(0,0,0,0)");
+}
 
-        nctx.fillStyle = grad;
-        nctx.beginPath();
-        nctx.arc(g.x, g.y, g.r, 0, Math.PI * 2);
-        nctx.fill();
-      });
 
-      starData.forEach(s => {
-        s.y -= s.speed;
-        if (s.y < -8) s.y = H + 8;
+/* =====================================================
+   AMBIENTE
+===================================================== */
 
-        const twinkle =
-          .58 + Math.sin(t / 950 + s.phase) * .30;
+function createAmbientObjects() {
 
-        sctx.fillStyle =
-          `rgba(255,225,220,${s.a * twinkle})`;
+  /*
+   * Sterne
+   */
 
-        sctx.beginPath();
-        sctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-        sctx.fill();
-      });
+  starData =
+    Array.from(
+      {
+        length:
+          Math.min(
+            120,
+            Math.floor(
+              width / 7
+            )
+          )
+      },
 
-      petalData.forEach(p => {
-        p.y += p.speed;
-        p.x += Math.sin(t / 1000 + p.sway) * .18;
-        p.rotation += p.spin;
+      () => ({
 
-        if (p.y > H + 30) {
-          p.y = -30;
-          p.x = random(0, W);
-        }
+        x:
+          random(
+            0,
+            width
+          ),
 
-        pctx.save();
-        pctx.translate(p.x, p.y);
-        pctx.rotate(p.rotation);
-        pctx.globalAlpha = p.alpha;
-        pctx.fillStyle = "#ff9faf";
+        y:
+          random(
+            0,
+            height
+          ),
 
-        pctx.beginPath();
-        pctx.moveTo(0, -8 * p.scale);
-        pctx.bezierCurveTo(
-          7 * p.scale, -4 * p.scale,
-          7 * p.scale, 5 * p.scale,
-          0, 9 * p.scale
-        );
-        pctx.bezierCurveTo(
-          -7 * p.scale, 5 * p.scale,
-          -7 * p.scale, -4 * p.scale,
-          0, -8 * p.scale
-        );
-        pctx.fill();
-        pctx.restore();
-      });
+        r:
+          random(
+            .35,
+            1.5
+          ),
 
-      if (!audio.paused && Math.random() < 0.016) {
-        heartData.push({
-          x: random(W * .18, W * .82),
-          y: H + 20,
-          size: random(5, 11),
-          speed: random(.22, .48),
-          alpha: random(.22, .48),
-          rotation: random(-.2, .2)
-        });
+        alpha:
+          random(
+            .15,
+            .70
+          ),
+
+        speed:
+          random(
+            .03,
+            .18
+          ),
+
+        phase:
+          random(
+            0,
+            Math.PI * 2
+          )
+
+      })
+    );
+
+
+  /*
+   * Blüten
+   */
+
+  petalData =
+    Array.from(
+      {
+        length:
+          Math.min(
+            24,
+            Math.floor(
+              width / 45
+            )
+          )
+      },
+
+      () => ({
+
+        x:
+          random(
+            0,
+            width
+          ),
+
+        y:
+          random(
+            -height,
+            height
+          ),
+
+        scale:
+          random(
+            .65,
+            1.7
+          ),
+
+        speed:
+          random(
+            .10,
+            .36
+          ),
+
+        rotation:
+          random(
+            0,
+            Math.PI * 2
+          ),
+
+        spin:
+          random(
+            -.012,
+            .012
+          ),
+
+        sway:
+          random(
+            0,
+            Math.PI * 2
+          ),
+
+        alpha:
+          random(
+            .12,
+            .42
+          )
+
+      })
+    );
+
+
+  /*
+   * Licht-Orbs
+   */
+
+  glowData =
+    Array.from(
+      {
+        length: 8
+      },
+
+      (_, index) => ({
+
+        x:
+          random(
+            -150,
+            width + 150
+          ),
+
+        y:
+          random(
+            -150,
+            height + 150
+          ),
+
+        radius:
+          random(
+            120,
+            280
+          ),
+
+        dx:
+          random(
+            -.035,
+            .035
+          ),
+
+        dy:
+          random(
+            -.025,
+            .025
+          ),
+
+        type:
+          index % 2 === 0
+            ? "rose"
+            : "gold"
+
+      })
+    );
+
+
+  heartData = [];
+
+}
+
+
+/* =====================================================
+   HERZ ZEICHNEN
+===================================================== */
+
+function drawHeart(
+  context,
+  x,
+  y,
+  size,
+  alpha,
+  rotation
+) {
+
+  context.save();
+
+
+  context.translate(
+    x,
+    y
+  );
+
+
+  context.rotate(
+    rotation
+  );
+
+
+  context.globalAlpha =
+    alpha;
+
+
+  context.strokeStyle =
+    "#ffb5c1";
+
+
+  context.lineWidth =
+    1.2;
+
+
+  context.shadowBlur =
+    15;
+
+
+  context.shadowColor =
+    "rgba(255,150,175,.75)";
+
+
+  context.beginPath();
+
+
+  context.moveTo(
+    0,
+    size * .30
+  );
+
+
+  context.bezierCurveTo(
+    -size * .62,
+    -size * .02,
+    -size * .48,
+    -size * .60,
+    0,
+    -size * .30
+  );
+
+
+  context.bezierCurveTo(
+    size * .48,
+    -size * .60,
+    size * .62,
+    -size * .02,
+    0,
+    size * .30
+  );
+
+
+  context.stroke();
+
+
+  context.restore();
+
+}
+
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+function animateBackground(
+  time
+) {
+
+  nebula.clearRect(
+    0,
+    0,
+    width,
+    height
+  );
+
+
+  stars.clearRect(
+    0,
+    0,
+    width,
+    height
+  );
+
+
+  petals.clearRect(
+    0,
+    0,
+    width,
+    height
+  );
+
+
+  hearts.clearRect(
+    0,
+    0,
+    width,
+    height
+  );
+
+
+  /* -------------------------------------
+     Licht-Orbs
+  ------------------------------------- */
+
+  glowData.forEach(
+    glow => {
+
+      glow.x += glow.dx;
+      glow.y += glow.dy;
+
+
+      if (
+        glow.x <
+        -glow.radius
+      ) {
+
+        glow.x =
+          width +
+          glow.radius;
+
       }
 
-      heartData = heartData.filter(h => h.y > -40);
 
-      heartData.forEach(h => {
-        h.y -= h.speed;
-        h.x += Math.sin(t / 850 + h.y * .01) * .10;
-        h.alpha *= .9985;
+      if (
+        glow.x >
+        width +
+        glow.radius
+      ) {
 
-        drawHeart(
-          hctx,
-          h.x,
-          h.y,
-          h.size,
-          h.alpha,
-          h.rotation
+        glow.x =
+          -glow.radius;
+
+      }
+
+
+      if (
+        glow.y <
+        -glow.radius
+      ) {
+
+        glow.y =
+          height +
+          glow.radius;
+
+      }
+
+
+      if (
+        glow.y >
+        height +
+        glow.radius
+      ) {
+
+        glow.y =
+          -glow.radius;
+
+      }
+
+
+      const gradient =
+        nebula.createRadialGradient(
+          glow.x,
+          glow.y,
+          0,
+          glow.x,
+          glow.y,
+          glow.radius
         );
-      });
 
-      requestAnimationFrame(drawFrame);
+
+      gradient.addColorStop(
+        0,
+
+        glow.type === "rose"
+          ? "rgba(255,170,189,.09)"
+          : "rgba(240,207,159,.065)"
+      );
+
+
+      gradient.addColorStop(
+        1,
+        "rgba(0,0,0,0)"
+      );
+
+
+      nebula.fillStyle =
+        gradient;
+
+
+      nebula.beginPath();
+
+
+      nebula.arc(
+        glow.x,
+        glow.y,
+        glow.radius,
+        0,
+        Math.PI * 2
+      );
+
+
+      nebula.fill();
+
     }
+  );
 
-    window.addEventListener("resize", resizeCanvases);
-    resizeCanvases();
-    requestAnimationFrame(drawFrame);
-  </script>
+
+  /* -------------------------------------
+     Sterne
+  ------------------------------------- */
+
+  starData.forEach(
+    star => {
+
+      star.y -=
+        star.speed;
+
+
+      if (
+        star.y <
+        -8
+      ) {
+
+        star.y =
+          height + 8;
+
+      }
+
+
+      const twinkle =
+        .58 +
+        Math.sin(
+          time / 850 +
+          star.phase
+        ) * .30;
+
+
+      stars.fillStyle =
+        `rgba(
+          255,
+          225,
+          220,
+          ${star.alpha * twinkle}
+        )`;
+
+
+      stars.beginPath();
+
+
+      stars.arc(
+        star.x,
+        star.y,
+        star.r,
+        0,
+        Math.PI * 2
+      );
+
+
+      stars.fill();
+
+    }
+  );
+
+
+  /* -------------------------------------
+     Blüten
+  ------------------------------------- */
+
+  petalData.forEach(
+    petalItem => {
+
+      petalItem.y +=
+        petalItem.speed;
+
+
+      petalItem.x +=
+        Math.sin(
+          time / 950 +
+          petalItem.sway
+        ) * .20;
+
+
+      petalItem.rotation +=
+        petalItem.spin;
+
+
+      if (
+        petalItem.y >
+        height + 30
+      ) {
+
+        petalItem.y =
+          -30;
+
+
+        petalItem.x =
+          random(
+            0,
+            width
+          );
+
+      }
+
+
+      petals.save();
+
+
+      petals.translate(
+        petalItem.x,
+        petalItem.y
+      );
+
+
+      petals.rotate(
+        petalItem.rotation
+      );
+
+
+      petals.globalAlpha =
+        petalItem.alpha;
+
+
+      petals.fillStyle =
+        "#ff9faf";
+
+
+      petals.beginPath();
+
+
+      petals.moveTo(
+        0,
+        -8 * petalItem.scale
+      );
+
+
+      petals.bezierCurveTo(
+        7 * petalItem.scale,
+        -4 * petalItem.scale,
+
+        7 * petalItem.scale,
+        5 * petalItem.scale,
+
+        0,
+        9 * petalItem.scale
+      );
+
+
+      petals.bezierCurveTo(
+        -7 * petalItem.scale,
+        5 * petalItem.scale,
+
+        -7 * petalItem.scale,
+        -4 * petalItem.scale,
+
+        0,
+        -8 * petalItem.scale
+      );
+
+
+      petals.fill();
+
+
+      petals.restore();
+
+    }
+  );
+
+
+  /* -------------------------------------
+     Herzen während Musik
+  ------------------------------------- */
+
+  if (
+    !audio.paused &&
+    Math.random() < .018
+  ) {
+
+    heartData.push({
+
+      x:
+        random(
+          width * .18,
+          width * .82
+        ),
+
+      y:
+        height + 20,
+
+      size:
+        random(
+          5,
+          11
+        ),
+
+      speed:
+        random(
+          .22,
+          .50
+        ),
+
+      alpha:
+        random(
+          .20,
+          .48
+        ),
+
+      rotation:
+        random(
+          -.2,
+          .2
+        )
+
+    });
+
+  }
+
+
+  heartData =
+    heartData.filter(
+      item =>
+        item.y >
+        -40
+    );
+
+
+  heartData.forEach(
+    item => {
+
+      item.y -=
+        item.speed;
+
+
+      item.x +=
+        Math.sin(
+          time / 850 +
+          item.y * .01
+        ) * .10;
+
+
+      item.alpha *=
+        .9985;
+
+
+      drawHeart(
+        hearts,
+        item.x,
+        item.y,
+        item.size,
+        item.alpha,
+        item.rotation
+      );
+
+    }
+  );
+
+
+  requestAnimationFrame(
+    animateBackground
+  );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+window.addEventListener(
+  "resize",
+  resizeCanvases
+);
+
+
+resizeCanvases();
+
+
+requestAnimationFrame(
+  animateBackground
+);
+
+</script>
+
 </body>
 </html>
