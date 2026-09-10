@@ -1,45 +1,72 @@
+```html
 <!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#08070b">
-  <meta name="description" content="Ты лучше всех, ты просто чудо!">
-  <title>Ты лучше всех, ты просто чудо! · Septemberlicht</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#08070b"
+  >
+
+  <meta
+    name="description"
+    content="Spätes Septemberlicht · Zwei Jahre"
+  >
+
+  <title>Spätes Septemberlicht · Zwei Jahre</title>
 
   <style>
+
     :root {
       --bg: #08070b;
       --bg2: #160b12;
 
       --text: #fff8f6;
-      --muted: rgba(255, 248, 246, .50);
-      --muted-soft: rgba(255, 248, 246, .30);
+
+      --muted:
+        rgba(255, 248, 246, .50);
+
+      --muted-soft:
+        rgba(255, 248, 246, .30);
 
       --rose: #ffb4c0;
-      --rose-bright: #ff8fa4;
+
       --gold: #f0d19e;
 
-      --glass: rgba(255,255,255,.055);
-      --border: rgba(255,255,255,.09);
+      --border:
+        rgba(255,255,255,.09);
 
-      --ease: cubic-bezier(.16,1,.3,1);
+      --ease:
+        cubic-bezier(.16,1,.3,1);
     }
+
 
     * {
       box-sizing: border-box;
     }
 
+
     html,
     body {
       width: 100%;
       height: 100%;
+
       margin: 0;
+
       overflow: hidden;
-      background: var(--bg);
+
+      background:
+        var(--bg);
     }
 
+
     body {
+
       font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -49,24 +76,26 @@
         "Segoe UI",
         sans-serif;
 
-      color: var(--text);
+      color:
+        var(--text);
 
       background:
+
         radial-gradient(
           ellipse at 50% 0%,
-          rgba(255, 171, 188, .12),
+          rgba(255,171,188,.12),
           transparent 38%
         ),
 
         radial-gradient(
           ellipse at 10% 90%,
-          rgba(240, 190, 140, .08),
+          rgba(240,190,140,.08),
           transparent 30%
         ),
 
         radial-gradient(
           ellipse at 90% 85%,
-          rgba(199, 120, 173, .08),
+          rgba(199,120,173,.08),
           transparent 30%
         ),
 
@@ -78,46 +107,56 @@
         );
     }
 
+
     button {
       font: inherit;
     }
 
+
     canvas {
+
       position: fixed;
+
       inset: 0;
+
       width: 100%;
       height: 100%;
+
       pointer-events: none;
     }
+
 
     #nebula {
       z-index: 0;
     }
 
+
     #stars {
       z-index: 1;
     }
+
 
     #petals {
       z-index: 2;
     }
 
+
     #hearts {
       z-index: 3;
     }
 
-    /* =========================================
-       SEITE
-    ========================================== */
 
     .page {
+
       position: relative;
+
       z-index: 5;
 
       width: 100%;
       height: 100%;
 
       display: flex;
+
       flex-direction: column;
 
       padding:
@@ -126,44 +165,67 @@
         max(16px, env(safe-area-inset-bottom));
     }
 
-    /* =========================================
-       HEADER
-    ========================================== */
 
     .topbar {
-      width: min(1120px, 100%);
+
+      width:
+        min(1120px, 100%);
+
       margin: 0 auto;
 
       display: flex;
-      justify-content: space-between;
-      align-items: center;
 
-      padding: 4px 0 14px;
+      justify-content:
+        space-between;
 
-      flex: 0 0 auto;
+      align-items:
+        center;
+
+      padding:
+        4px 0 14px;
+
+      flex:
+        0 0 auto;
     }
+
 
     .eyebrow {
+
       display: flex;
-      align-items: center;
 
-      gap: 10px;
+      align-items:
+        center;
 
-      color: rgba(255, 248, 246, .46);
+      gap:
+        10px;
 
-      font-size: 10px;
-      letter-spacing: .28em;
+      color:
+        rgba(255,248,246,.46);
 
-      text-transform: uppercase;
+      font-size:
+        10px;
 
-      white-space: nowrap;
+      letter-spacing:
+        .28em;
+
+      text-transform:
+        uppercase;
+
+      white-space:
+        nowrap;
     }
 
-    .eyebrow::before {
-      content: "";
 
-      width: 30px;
-      height: 1px;
+    .eyebrow::before {
+
+      content:
+        "";
+
+      width:
+        30px;
+
+      height:
+        1px;
 
       background:
         linear-gradient(
@@ -173,124 +235,174 @@
         );
     }
 
+
     .mark {
-      color: var(--rose);
 
-      font-size: 22px;
+      color:
+        var(--rose);
 
-      line-height: 1;
+      font-size:
+        22px;
+
+      line-height:
+        1;
 
       animation:
         heartbeat 3s ease-in-out infinite;
 
       text-shadow:
-        0 0 22px rgba(255, 157, 181, .45);
+        0 0 22px
+        rgba(255,157,181,.45);
     }
+
 
     @keyframes heartbeat {
 
       0%,
       100% {
-        transform: scale(1);
-        opacity: .72;
+
+        transform:
+          scale(1);
+
+        opacity:
+          .72;
       }
+
 
       50% {
-        transform: scale(1.13);
-        opacity: 1;
+
+        transform:
+          scale(1.13);
+
+        opacity:
+          1;
       }
+
     }
 
-    /* =========================================
-       MAIN
-    ========================================== */
 
     .main {
-      width: min(920px, 100%);
 
-      min-height: 0;
+      width:
+        min(920px,100%);
 
-      flex: 1;
+      min-height:
+        0;
 
-      margin: 0 auto;
+      flex:
+        1;
 
-      display: flex;
-      flex-direction: column;
+      margin:
+        0 auto;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
     }
 
-    /* =========================================
-       TITEL
-    ========================================== */
 
     .hero {
-      flex: 0 0 auto;
 
-      text-align: center;
+      flex:
+        0 0 auto;
+
+      text-align:
+        center;
 
       padding:
-        6px 0 18px;
+        8px 0 18px;
     }
+
 
     .title {
-      margin: 0;
+
+      margin:
+        0;
 
       font-size:
         clamp(
-          32px,
+          36px,
           6vw,
-          70px
+          72px
         );
 
-      line-height: 1.04;
+      line-height:
+        1.03;
 
-      letter-spacing: -.045em;
+      letter-spacing:
+        -.045em;
 
-      font-weight: 520;
+      font-weight:
+        520;
 
       text-shadow:
-        0 15px 55px rgba(0,0,0,.35);
+        0 15px 55px
+        rgba(0,0,0,.35);
+
+      animation:
+        titleAppear .9s var(--ease)
+        both;
     }
 
-    .subtitle {
-      margin: 11px 0 0;
 
-      color: var(--muted);
+    @keyframes titleAppear {
 
-      font-size:
-        clamp(
-          13px,
-          2vw,
-          17px
-        );
+      from {
 
-      font-weight: 300;
+        opacity:
+          0;
+
+        transform:
+          translateY(16px)
+          scale(.98);
+      }
+
+
+      to {
+
+        opacity:
+          1;
+
+        transform:
+          translateY(0)
+          scale(1);
+      }
+
     }
 
-    /* =========================================
-       PLAYER
-    ========================================== */
 
     .player {
-      flex: 0 0 auto;
 
-      display: grid;
+      flex:
+        0 0 auto;
+
+      display:
+        grid;
 
       grid-template-columns:
         170px
-        minmax(0, 1fr);
+        minmax(0,1fr);
 
-      gap: 26px;
+      gap:
+        26px;
 
-      align-items: center;
+      align-items:
+        center;
 
-      padding: 18px;
+      padding:
+        18px;
 
       border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
-      border-radius: 27px;
+      border-radius:
+        27px;
 
       background:
+
         linear-gradient(
           135deg,
           rgba(255,255,255,.075),
@@ -306,27 +418,35 @@
         saturate(125%);
 
       box-shadow:
-        0 30px 90px rgba(0,0,0,.40),
-        inset 0 1px rgba(255,255,255,.06);
+
+        0 30px 90px
+        rgba(0,0,0,.40),
+
+        inset 0 1px
+        rgba(255,255,255,.06);
     }
 
-    /* =========================================
-       COVER
-    ========================================== */
 
     .cover {
-      width: 170px;
 
-      aspect-ratio: 1;
+      width:
+        170px;
 
-      position: relative;
+      aspect-ratio:
+        1;
 
-      overflow: hidden;
+      position:
+        relative;
 
-      border-radius: 21px;
+      overflow:
+        hidden;
+
+      border-radius:
+        21px;
 
       border:
-        1px solid rgba(255,255,255,.12);
+        1px solid
+        rgba(255,255,255,.12);
 
       background:
 
@@ -350,20 +470,27 @@
         );
 
       box-shadow:
-        0 22px 50px rgba(0,0,0,.43);
+        0 22px 50px
+        rgba(0,0,0,.43);
     }
+
 
     .cover::before {
 
-      content: "";
+      content:
+        "";
 
-      position: absolute;
+      position:
+        absolute;
 
-      inset: 20% 7% auto;
+      inset:
+        20% 7% auto;
 
-      height: 44%;
+      height:
+        44%;
 
-      border-radius: 50%;
+      border-radius:
+        50%;
 
       background:
         radial-gradient(
@@ -375,44 +502,55 @@
       filter:
         blur(9px);
 
-      opacity: .82;
+      opacity:
+        .82;
     }
+
 
     .cover::after {
 
-      content: "♡";
+      content:
+        "♡";
 
-      position: absolute;
+      position:
+        absolute;
 
-      right: 13px;
-      bottom: 7px;
+      right:
+        13px;
 
-      font-size: 29px;
+      bottom:
+        7px;
+
+      font-size:
+        29px;
 
       color:
         rgba(255,224,226,.86);
 
       text-shadow:
-        0 0 24px rgba(255,145,172,.72);
+        0 0 24px
+        rgba(255,145,172,.72);
     }
 
-    /* =========================================
-       SONG INFORMATION
-    ========================================== */
 
     .song-label {
 
-      margin-bottom: 6px;
+      margin-bottom:
+        6px;
 
       color:
         var(--muted-soft);
 
-      font-size: 10px;
+      font-size:
+        10px;
 
-      letter-spacing: .2em;
+      letter-spacing:
+        .2em;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
     }
+
 
     .song-title {
 
@@ -423,74 +561,100 @@
           28px
         );
 
-      font-weight: 500;
+      font-weight:
+        500;
 
-      letter-spacing: -.02em;
+      letter-spacing:
+        -.02em;
     }
+
 
     .song-sub {
 
-      margin-top: 5px;
+      margin-top:
+        5px;
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
-      font-size: 13px;
+      font-size:
+        13px;
     }
 
-    /* =========================================
-       FORTSCHRITT
-    ========================================== */
 
     .progress-wrap {
 
-      position: relative;
+      position:
+        relative;
 
-      margin-top: 17px;
+      margin-top:
+        17px;
 
-      user-select: none;
+      user-select:
+        none;
 
-      touch-action: none;
+      touch-action:
+        none;
 
-      cursor: pointer;
+      cursor:
+        pointer;
     }
+
 
     .progress {
 
-      position: relative;
+      position:
+        relative;
 
-      height: 20px;
+      height:
+        20px;
 
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
+      align-items:
+        center;
     }
+
 
     .progress-bg {
 
-      position: absolute;
+      position:
+        absolute;
 
-      left: 0;
-      right: 0;
+      left:
+        0;
 
-      height: 4px;
+      right:
+        0;
 
-      border-radius: 999px;
+      height:
+        4px;
+
+      border-radius:
+        999px;
 
       background:
-        rgba(255,255,255,.10);
+        rgba(255,255,255,.075);
     }
+
 
     .progress-fill {
 
-      position: absolute;
+      position:
+        absolute;
 
-      left: 0;
+      left:
+        0;
 
-      width: 0%;
+      width:
+        0%;
 
-      height: 4px;
+      height:
+        4px;
 
-      border-radius: 999px;
+      border-radius:
+        999px;
 
       background:
         linear-gradient(
@@ -500,26 +664,39 @@
         );
 
       box-shadow:
-        0 0 18px rgba(255,171,189,.48);
+        0 0 18px
+        rgba(255,171,189,.48);
+
+      transition:
+        width .10s linear;
     }
+
 
     .progress-dot {
 
-      position: absolute;
+      position:
+        absolute;
 
-      left: 0;
+      left:
+        0;
 
-      width: 12px;
-      height: 12px;
+      width:
+        12px;
+
+      height:
+        12px;
 
       transform:
         translateX(-50%);
 
-      border-radius: 50%;
+      border-radius:
+        50%;
 
-      background: #fff;
+      background:
+        #fff;
 
       box-shadow:
+
         0 0 0 4px
         rgba(255,179,192,.10),
 
@@ -527,50 +704,64 @@
         rgba(0,0,0,.30);
     }
 
+
     .times {
 
-      display: flex;
+      display:
+        flex;
 
-      justify-content: space-between;
+      justify-content:
+        space-between;
 
-      margin-top: 4px;
+      margin-top:
+        4px;
 
       color:
         rgba(255,255,255,.40);
 
-      font-size: 10px;
+      font-size:
+        10px;
 
       font-variant-numeric:
         tabular-nums;
     }
 
-    /* =========================================
-       CONTROLS
-    ========================================== */
 
     .controls {
 
-      display: flex;
+      display:
+        flex;
 
-      justify-content: center;
+      justify-content:
+        center;
 
-      align-items: center;
+      align-items:
+        center;
 
-      gap: 15px;
+      gap:
+        15px;
 
-      margin-top: 7px;
+      margin-top:
+        7px;
     }
+
 
     .control {
 
-      width: 40px;
-      height: 40px;
+      width:
+        40px;
 
-      display: grid;
+      height:
+        40px;
 
-      place-items: center;
+      display:
+        grid;
 
-      border-radius: 50%;
+      place-items:
+        center;
+
+      border-radius:
+        50%;
 
       border:
         1px solid
@@ -582,12 +773,14 @@
       background:
         rgba(255,255,255,.04);
 
-      cursor: pointer;
+      cursor:
+        pointer;
 
       transition:
         transform .22s ease,
         background .22s ease;
     }
+
 
     .control:hover {
 
@@ -598,22 +791,30 @@
         translateY(-2px);
     }
 
+
     .control:active {
 
       transform:
         scale(.94);
     }
 
+
     .play {
 
-      width: 57px;
-      height: 57px;
+      width:
+        57px;
 
-      display: grid;
+      height:
+        57px;
 
-      place-items: center;
+      display:
+        grid;
 
-      border-radius: 50%;
+      place-items:
+        center;
+
+      border-radius:
+        50%;
 
       border:
         1px solid
@@ -623,6 +824,7 @@
         #fff3f0;
 
       background:
+
         linear-gradient(
           180deg,
           rgba(255,255,255,.13),
@@ -630,15 +832,21 @@
         );
 
       box-shadow:
-        0 0 0 6px rgba(255,180,192,.025),
-        0 0 34px rgba(255,160,180,.14);
 
-      cursor: pointer;
+        0 0 0 6px
+        rgba(255,180,192,.025),
+
+        0 0 34px
+        rgba(255,160,180,.14);
+
+      cursor:
+        pointer;
 
       transition:
         transform .25s var(--ease),
         box-shadow .25s var(--ease);
     }
+
 
     .play:hover {
 
@@ -646,6 +854,7 @@
         scale(1.06);
 
       box-shadow:
+
         0 0 0 8px
         rgba(255,180,192,.035),
 
@@ -653,42 +862,51 @@
         rgba(255,160,180,.25);
     }
 
+
     .play:active {
 
       transform:
         scale(.95);
     }
 
-    /* =========================================
-       LAUTSTÄRKE
-    ========================================== */
 
     .volume-area {
 
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      justify-content: center;
+      justify-content:
+        center;
 
-      gap: 9px;
+      gap:
+        9px;
 
-      margin-top: 8px;
+      margin-top:
+        8px;
     }
+
 
     .volume-icon {
 
-      width: 16px;
-
-      flex: 0 0 auto;
+      width:
+        16px;
 
       color:
         rgba(255,255,255,.50);
 
-      display: grid;
+      display:
+        grid;
 
-      place-items: center;
+      place-items:
+        center;
+
+      flex:
+        0 0 auto;
     }
+
 
     .volume-slider {
 
@@ -698,22 +916,30 @@
           42%
         );
 
-      height: 22px;
+      height:
+        22px;
 
-      appearance: none;
+      appearance:
+        none;
 
-      -webkit-appearance: none;
+      -webkit-appearance:
+        none;
 
-      background: transparent;
+      background:
+        transparent;
 
-      cursor: pointer;
+      cursor:
+        pointer;
     }
+
 
     .volume-slider::-webkit-slider-runnable-track {
 
-      height: 4px;
+      height:
+        4px;
 
-      border-radius: 999px;
+      border-radius:
+        999px;
 
       background:
         linear-gradient(
@@ -722,12 +948,15 @@
           var(--gold)
         );
     }
+
 
     .volume-slider::-moz-range-track {
 
-      height: 4px;
+      height:
+        4px;
 
-      border-radius: 999px;
+      border-radius:
+        999px;
 
       background:
         linear-gradient(
@@ -737,43 +966,62 @@
         );
     }
 
+
     .volume-slider::-webkit-slider-thumb {
 
-      appearance: none;
+      appearance:
+        none;
 
-      -webkit-appearance: none;
+      -webkit-appearance:
+        none;
 
-      width: 13px;
-      height: 13px;
+      width:
+        13px;
 
-      margin-top: -4.5px;
+      height:
+        13px;
 
-      border: 0;
+      margin-top:
+        -4.5px;
 
-      border-radius: 50%;
+      border:
+        0;
 
-      background: #fff;
+      border-radius:
+        50%;
+
+      background:
+        #fff;
 
       box-shadow:
+
         0 0 0 4px
         rgba(255,180,194,.10),
 
         0 3px 12px
         rgba(0,0,0,.35);
     }
+
 
     .volume-slider::-moz-range-thumb {
 
-      width: 13px;
-      height: 13px;
+      width:
+        13px;
 
-      border: 0;
+      height:
+        13px;
 
-      border-radius: 50%;
+      border:
+        0;
 
-      background: #fff;
+      border-radius:
+        50%;
+
+      background:
+        #fff;
 
       box-shadow:
+
         0 0 0 4px
         rgba(255,180,194,.10),
 
@@ -781,70 +1029,87 @@
         rgba(0,0,0,.35);
     }
 
+
     .volume-value {
 
-      width: 30px;
+      width:
+        30px;
 
       color:
         rgba(255,255,255,.36);
 
-      font-size: 9px;
+      font-size:
+        9px;
 
       font-variant-numeric:
         tabular-nums;
 
-      text-align: right;
+      text-align:
+        right;
     }
+
 
     .hint {
 
-      min-height: 13px;
+      min-height:
+        13px;
 
-      margin-top: 4px;
+      margin-top:
+        4px;
 
       color:
         rgba(255,255,255,.25);
 
-      font-size: 9px;
+      font-size:
+        9px;
 
-      text-align: center;
+      text-align:
+        center;
     }
+
 
     .error {
 
-      min-height: 14px;
+      min-height:
+        14px;
 
-      text-align: center;
+      text-align:
+        center;
 
       color:
         #ffb6c0;
 
-      font-size: 10px;
+      font-size:
+        10px;
     }
 
-    /* =========================================
-       LYRICS CARD
-    ========================================== */
 
     .lyrics-card {
 
-      flex: 1;
+      flex:
+        1;
 
-      min-height: 0;
+      min-height:
+        0;
 
-      display: flex;
+      display:
+        flex;
 
-      flex-direction: column;
+      flex-direction:
+        column;
 
-      overflow: hidden;
+      overflow:
+        hidden;
 
-      margin-top: 12px;
+      margin-top:
+        12px;
 
       border:
         1px solid
         rgba(255,255,255,.065);
 
-      border-radius: 27px;
+      border-radius:
+        27px;
 
       background:
         rgba(255,255,255,.024);
@@ -856,13 +1121,17 @@
         blur(18px);
     }
 
+
     .lyrics-top {
 
-      flex: 0 0 auto;
+      flex:
+        0 0 auto;
 
-      display: flex;
+      display:
+        flex;
 
-      justify-content: space-between;
+      justify-content:
+        space-between;
 
       padding:
         12px 17px;
@@ -870,28 +1139,33 @@
       color:
         rgba(255,255,255,.30);
 
-      font-size: 9px;
+      font-size:
+        9px;
 
-      letter-spacing: .22em;
+      letter-spacing:
+        .22em;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
     }
 
-    /* =========================================
-       LYRICS
-    ========================================== */
 
     .lyrics {
 
-      flex: 1;
+      flex:
+        1;
 
-      min-height: 0;
+      min-height:
+        0;
 
-      overflow-y: auto;
+      overflow-y:
+        auto;
 
-      overscroll-behavior: contain;
+      overscroll-behavior:
+        contain;
 
-      scrollbar-width: thin;
+      scrollbar-width:
+        thin;
 
       scrollbar-color:
         rgba(255,175,190,.35)
@@ -921,9 +1195,13 @@
         );
     }
 
+
     .lyrics::-webkit-scrollbar {
-      width: 5px;
+
+      width:
+        5px;
     }
+
 
     .lyrics::-webkit-scrollbar-thumb {
 
@@ -937,21 +1215,23 @@
         999px;
     }
 
-    /* =========================================
-       LYRICS ZEILEN
-    ========================================== */
 
     .line {
 
-      position: relative;
+      position:
+        relative;
 
-      max-width: 760px;
+      max-width:
+        760px;
 
-      margin: 0 auto;
+      margin:
+        0 auto;
 
-      padding: 10px 0;
+      padding:
+        10px 0;
 
-      text-align: center;
+      text-align:
+        center;
 
       color:
         rgba(255,255,255,.29);
@@ -963,11 +1243,14 @@
           24px
         );
 
-      line-height: 1.45;
+      line-height:
+        1.45;
 
-      font-weight: 300;
+      font-weight:
+        300;
 
-      opacity: .34;
+      opacity:
+        .34;
 
       transform:
         translateY(21px)
@@ -977,18 +1260,26 @@
         blur(1px);
 
       transition:
+
         opacity .40s var(--ease),
+
         transform .46s var(--ease),
+
         color .40s ease,
+
         filter .40s ease,
+
         text-shadow .40s ease;
 
-      cursor: pointer;
+      cursor:
+        pointer;
     }
+
 
     .line.near {
 
-      opacity: .62;
+      opacity:
+        .62;
 
       transform:
         translateY(6px)
@@ -998,9 +1289,11 @@
         blur(.20px);
     }
 
+
     .line.active {
 
-      opacity: 1;
+      opacity:
+        1;
 
       color:
         #fff2ef;
@@ -1013,6 +1306,7 @@
         blur(0);
 
       text-shadow:
+
         0 0 14px
         rgba(255,172,190,.25),
 
@@ -1020,23 +1314,32 @@
         rgba(255,172,190,.12);
     }
 
+
     .line.active::before {
 
-      content: "";
+      content:
+        "";
 
-      position: absolute;
+      position:
+        absolute;
 
-      left: -22px;
+      left:
+        -22px;
 
-      top: 50%;
+      top:
+        50%;
 
-      width: 5px;
-      height: 5px;
+      width:
+        5px;
+
+      height:
+        5px;
 
       transform:
         translateY(-50%);
 
-      border-radius: 50%;
+      border-radius:
+        50%;
 
       background:
         var(--rose);
@@ -1049,6 +1352,7 @@
         lyricDot 1.5s ease-in-out infinite;
     }
 
+
     @keyframes lyricDot {
 
       0%,
@@ -1058,8 +1362,10 @@
           translateY(-50%)
           scale(.7);
 
-        opacity: .5;
+        opacity:
+          .5;
       }
+
 
       50% {
 
@@ -1067,20 +1373,26 @@
           translateY(-50%)
           scale(1.25);
 
-        opacity: 1;
+        opacity:
+          1;
       }
+
     }
+
 
     .divider {
 
-      width: 58px;
+      width:
+        58px;
 
-      height: 1px;
+      height:
+        1px;
 
       margin:
         8px auto 11px;
 
       background:
+
         linear-gradient(
           90deg,
           transparent,
@@ -1089,25 +1401,33 @@
         );
     }
 
+
     .ending {
 
-      text-align: center;
+      text-align:
+        center;
 
-      padding-top: 18px;
+      padding-top:
+        18px;
 
       color:
         rgba(255,255,255,.25);
 
-      font-size: 11px;
+      font-size:
+        11px;
 
-      letter-spacing: .10em;
+      letter-spacing:
+        .10em;
     }
+
 
     .ending strong {
 
-      display: block;
+      display:
+        block;
 
-      margin-top: 6px;
+      margin-top:
+        6px;
 
       color:
         rgba(255,185,194,.88);
@@ -1116,49 +1436,65 @@
         Georgia,
         serif;
 
-      font-size: 27px;
+      font-size:
+        27px;
 
-      font-style: italic;
+      font-style:
+        italic;
 
-      font-weight: 400;
+      font-weight:
+        400;
 
-      letter-spacing: 0;
+      letter-spacing:
+        0;
     }
 
-    /* =========================================
-       MOBILE
-    ========================================== */
 
-    @media (max-width: 760px) {
+    @media (max-width:760px) {
 
       .page {
 
-        padding-left: 9px;
-        padding-right: 9px;
+        padding-left:
+          9px;
+
+        padding-right:
+          9px;
       }
+
 
       .topbar {
 
-        padding-bottom: 9px;
+        padding-bottom:
+          9px;
       }
+
 
       .eyebrow {
 
-        font-size: 8.5px;
+        font-size:
+          8.5px;
 
-        letter-spacing: .18em;
+        letter-spacing:
+          .18em;
 
-        gap: 8px;
+        gap:
+          8px;
       }
+
 
       .eyebrow::before {
-        width: 22px;
+
+        width:
+          22px;
       }
+
 
       .hero {
 
-        padding-bottom: 8px;
+        padding-bottom:
+          8px;
       }
+
 
       .title {
 
@@ -1168,22 +1504,27 @@
             8.6vw,
             43px
           );
+
+        line-height:
+          1.08;
       }
 
-      .subtitle {
-        font-size: 12px;
-      }
 
       .player {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
 
-        gap: 11px;
+        gap:
+          11px;
 
-        padding: 13px;
+        padding:
+          13px;
 
-        border-radius: 22px;
+        border-radius:
+          22px;
       }
+
 
       .cover {
 
@@ -1197,36 +1538,58 @@
           0 auto;
       }
 
+
       .song-info {
 
-        text-align: center;
+        text-align:
+          center;
       }
+
 
       .song-label {
-        font-size: 9px;
+
+        font-size:
+          9px;
       }
+
 
       .song-title {
-        font-size: 20px;
+
+        font-size:
+          20px;
       }
+
 
       .song-sub {
-        font-size: 12px;
+
+        font-size:
+          12px;
       }
+
 
       .progress-wrap {
-        margin-top: 15px;
+
+        margin-top:
+          15px;
       }
+
 
       .controls {
-        margin-top: 6px;
+
+        margin-top:
+          6px;
       }
+
 
       .volume-area {
-        margin-top: 6px;
+
+        margin-top:
+          6px;
       }
 
+
       .volume-slider {
+
         width:
           min(
             145px,
@@ -1234,18 +1597,23 @@
           );
       }
 
+
       .lyrics-card {
 
-        margin-top: 8px;
+        margin-top:
+          8px;
 
-        border-radius: 22px;
+        border-radius:
+          22px;
       }
+
 
       .lyrics-top {
 
         padding:
           10px 13px;
       }
+
 
       .lyrics {
 
@@ -1255,15 +1623,19 @@
           48vh;
       }
 
+
       .line {
 
-        font-size: 16px;
+        font-size:
+          16px;
 
-        line-height: 1.42;
+        line-height:
+          1.42;
 
         padding:
           9px 4px;
       }
+
 
       .line.active {
 
@@ -1271,29 +1643,37 @@
           scale(1.035);
       }
 
+
       .line.active::before {
 
-        left: -9px;
+        left:
+          -9px;
       }
+
 
       .control {
 
-        width: 37px;
-        height: 37px;
+        width:
+          37px;
+
+        height:
+          37px;
       }
+
 
       .play {
 
-        width: 53px;
-        height: 53px;
+        width:
+          53px;
+
+        height:
+          53px;
       }
+
     }
 
-    /* =========================================
-       KLEINE HANDYS
-    ========================================== */
 
-    @media (max-width: 420px) {
+    @media (max-width:420px) {
 
       .title {
 
@@ -1301,11 +1681,13 @@
           28px;
       }
 
+
       .cover {
 
         width:
           138px;
       }
+
 
       .player {
 
@@ -1313,11 +1695,13 @@
           11px;
       }
 
+
       .lyrics {
 
         padding-top:
           48px;
       }
+
 
       .line {
 
@@ -1325,16 +1709,17 @@
           15px;
       }
 
+
       .volume-slider {
-        width: 135px;
+
+        width:
+          135px;
       }
+
     }
 
-    /* =========================================
-       WENIGER BEWEGUNG
-    ========================================== */
 
-    @media (prefers-reduced-motion: reduce) {
+    @media (prefers-reduced-motion:reduce) {
 
       *,
       *::before,
@@ -1353,2279 +1738,2255 @@
           .001ms !important;
       }
 
+
       canvas {
-        display: none;
+
+        display:
+          none;
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-<canvas id="nebula"></canvas>
-<canvas id="stars"></canvas>
-<canvas id="petals"></canvas>
-<canvas id="hearts"></canvas>
+  <canvas id="nebula"></canvas>
+  <canvas id="stars"></canvas>
+  <canvas id="petals"></canvas>
+  <canvas id="hearts"></canvas>
 
 
-<div class="page">
-
-  <!-- =========================================
-       HEADER
-  ========================================== -->
-
-  <header class="topbar">
-
-    <div class="eyebrow">
-      Septemberlicht · Zwei Jahre
-    </div>
-
-    <div class="mark">
-      ♡
-    </div>
-
-  </header>
+  <div class="page">
 
 
-  <main class="main">
+    <header class="topbar">
 
-    <!-- =======================================
-         TITEL
-    ======================================== -->
+      <div class="eyebrow">
 
-    <section class="hero">
+        Septemberlicht · Zwei Jahre
 
-      <h1 class="title">
-        Ты лучше всех, ты просто чудо!
-      </h1>
-
-      <p class="subtitle">
-        Spätes Septemberlicht
-      </p>
-
-    </section>
+      </div>
 
 
-    <!-- =======================================
-         PLAYER
-    ======================================== -->
+      <div class="mark">
 
-    <section class="player">
+        ♡
 
-      <div class="cover"></div>
+      </div>
 
-
-      <div>
-
-        <div class="song-label">
-          Unser Song
-        </div>
-
-        <div class="song-title">
-          Septemberlicht
-        </div>
-
-        <div class="song-sub">
-          schon 2 Jahre. Für immer wir.
-        </div>
+    </header>
 
 
-        <!-- FORTSCHRITT -->
+    <main class="main">
 
-        <div
-          class="progress-wrap"
-          id="progressWrap"
-        >
 
-          <div class="progress">
+      <section class="hero">
 
-            <div class="progress-bg"></div>
+        <h1 class="title">
 
-            <div
-              class="progress-fill"
-              id="progressFill"
-            ></div>
+          Spätes Septemberlicht
 
-            <div
-              class="progress-dot"
-              id="progressDot"
-            ></div>
+        </h1>
+
+      </section>
+
+
+      <section class="player">
+
+
+        <div class="cover"></div>
+
+
+        <div>
+
+
+          <div class="song-label">
+
+            Unser Song
 
           </div>
 
 
-          <div class="times">
+          <div class="song-title">
 
-            <span id="currentTime">
-              0:00
-            </span>
-
-            <span id="totalTime">
-              0:00
-            </span>
+            Septemberlicht
 
           </div>
 
-        </div>
 
+          <div class="song-sub">
 
-        <!-- CONTROLS -->
+            schon 2 Jahre. Für immer wir.
 
-        <div class="controls">
+          </div>
 
-          <button
-            class="control"
-            id="back"
-            type="button"
-            aria-label="10 Sekunden zurück"
-          >
-            ↶
-          </button>
-
-
-          <button
-            class="play"
-            id="play"
-            type="button"
-            aria-label="Song abspielen"
-          >
-
-            <svg
-              id="playIcon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-
-              <path d="M8 5v14l11-7z"/>
-
-            </svg>
-
-
-            <svg
-              id="pauseIcon"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              style="display:none"
-            >
-
-              <path
-                d="M6 5h4v14H6zm8 0h4v14h-4z"
-              />
-
-            </svg>
-
-          </button>
-
-
-          <button
-            class="control"
-            id="forward"
-            type="button"
-            aria-label="10 Sekunden vor"
-          >
-            ↷
-          </button>
-
-        </div>
-
-
-        <!-- ====================================
-             LAUTSTÄRKE
-        ===================================== -->
-
-        <div class="volume-area">
 
           <div
-            class="volume-icon"
-            id="volumeIcon"
+            class="progress-wrap"
+            id="progressWrap"
           >
 
-            <svg
-              width="15"
-              height="15"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.7"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+            <div class="progress">
 
-              <polygon
-                points="
-                  11 5
-                  6 9
-                  2 9
-                  2 15
-                  6 15
-                  11 19
-                "
-              />
+              <div
+                class="progress-bg"
+              ></div>
 
-              <path
-                d="M19 9a5 5 0 0 1 0 6"
-              />
 
-              <path
-                d="M22 6.5a9 9 0 0 1 0 11"
-              />
+              <div
+                class="progress-fill"
+                id="progressFill"
+              ></div>
 
-            </svg>
+
+              <div
+                class="progress-dot"
+                id="progressDot"
+              ></div>
+
+            </div>
+
+
+            <div class="times">
+
+              <span
+                id="currentTime"
+              >
+                0:00
+              </span>
+
+
+              <span
+                id="totalTime"
+              >
+                0:00
+              </span>
+
+            </div>
 
           </div>
 
 
-          <input
-            class="volume-slider"
-            id="volume"
-            type="range"
-            min="0"
-            max="1"
-            step="0.01"
-            value="1"
-            aria-label="Lautstärke"
-          >
+          <div class="controls">
+
+            <button
+              class="control"
+              id="back"
+              type="button"
+              aria-label="10 Sekunden zurück"
+            >
+              ↶
+            </button>
 
 
-          <span
-            class="volume-value"
-            id="volumeValue"
-          >
-            100%
+            <button
+              class="play"
+              id="play"
+              type="button"
+              aria-label="Song abspielen"
+            >
+
+              <svg
+                id="playIcon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+
+                <path
+                  d="M8 5v14l11-7z"
+                />
+
+              </svg>
+
+
+              <svg
+                id="pauseIcon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                style="display:none"
+              >
+
+                <path
+                  d="M6 5h4v14H6zm8 0h4v14h-4z"
+                />
+
+              </svg>
+
+            </button>
+
+
+            <button
+              class="control"
+              id="forward"
+              type="button"
+              aria-label="10 Sekunden vor"
+            >
+
+              ↷
+
+            </button>
+
+          </div>
+
+
+          <div class="volume-area">
+
+
+            <div
+              class="volume-icon"
+              id="volumeIcon"
+            >
+
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+
+                <polygon
+                  points="
+                    11 5
+                    6 9
+                    2 9
+                    2 15
+                    6 15
+                    11 19
+                  "
+                />
+
+                <path
+                  d="M15 9a5 5 0 0 1 0 6"
+                />
+
+                <path
+                  d="M18 6.5a9 9 0 0 1 0 11"
+                />
+
+              </svg>
+
+            </div>
+
+
+            <input
+              class="volume-slider"
+              id="volume"
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value="1"
+              aria-label="Lautstärke"
+            >
+
+
+            <span
+              class="volume-value"
+              id="volumeValue"
+            >
+              100%
+            </span>
+
+          </div>
+
+
+          <div
+            class="hint"
+            id="hint"
+          ></div>
+
+
+          <div
+            class="error"
+            id="error"
+          ></div>
+
+        </div>
+
+      </section>
+
+
+      <section class="lyrics-card">
+
+
+        <div class="lyrics-top">
+
+          <span>
+            Lyrics
+          </span>
+
+
+          <span>
+            Live Sync
           </span>
 
         </div>
 
 
         <div
-          class="hint"
-          id="hint"
+          class="lyrics"
+          id="lyrics"
         ></div>
 
+      </section>
 
-        <div
-          class="error"
-          id="error"
-        ></div>
+    </main>
 
-      </div>
-
-    </section>
+  </div>
 
 
-    <!-- =======================================
-         LYRICS
-    ======================================== -->
-
-    <section class="lyrics-card">
-
-      <div class="lyrics-top">
-
-        <span>
-          Lyrics
-        </span>
-
-        <span>
-          Live Sync
-        </span>
-
-      </div>
-
-
-      <div
-        class="lyrics"
-        id="lyrics"
-      ></div>
-
-    </section>
-
-  </main>
-
-</div>
-
-
-<!-- ===========================================
-     MP3
-
-     Die Datei muss direkt neben index.html
-     liegen und song.mp3 heißen.
-=========================================== -->
-
-<audio
-  id="audio"
-  preload="metadata"
->
-
-  <source
-    id="audioSource"
-    src="song.mp3"
-    type="audio/mpeg"
+  <audio
+    id="audio"
+    preload="metadata"
   >
 
-</audio>
-
-
-<script>
-
-/* =====================================================
-   AUDIO
-===================================================== */
-
-const AUDIO_URL =
-  "song.mp3";
-
-
-/* =====================================================
-   SONGTEXT + ZEITMARKEN
-===================================================== */
-
-const LYRICS = [
-
-  {
-    time: 5,
-    text:
-      "Zusammen auf dem Dach, spätes Septemberlicht"
-  },
-
-  {
-    time: 11,
-    text:
-      "Zwei Jahre an deiner Seite, mehr brauche ich nicht"
-  },
-
-  {
-    time: 17,
-    text:
-      "Der Wind weht leise, du schaust mich an"
-  },
-
-  {
-    time: 23,
-    text:
-      "Und ich denke zurück, wie alles begann:"
-  },
-
-
-  {
-    time: 29,
-    text:
-      "'Cause we fell in love in September"
-  },
-
-  {
-    time: 34,
-    text:
-      "On the twenty-first day"
-  },
-
-  {
-    time: 38,
-    text:
-      "Looking up at the stars"
-  },
-
-  {
-    time: 42,
-    text:
-      "Just the way that I like it"
-  },
-
-
-  {
-    time: 47,
-    text:
-      "моя любимая, mein ganzes Glück"
-  },
-
-  {
-    time: 53,
-    text:
-      "Ich schau nur nach vorn, nie wieder zurück"
-  },
-
-  {
-    time: 59,
-    text:
-      "Du bist meine Welt, mein Lieblingsort"
-  },
-
-  {
-    time: 65,
-    text:
-      "Mit dir bin ich Zuhause, genau hier und sofort"
-  },
-
-
-  {
-    time: 72,
-    text:
-      "Warmes Licht am Abend, der Herbst fängt an"
-  },
-
-  {
-    time: 79,
-    text:
-      "Bin so stolz, dass ich dich meine Freundin nennen kann"
-  },
-
-  {
-    time: 87,
-    text:
-      "Zwei Jahre vergangen, fühlt sich immer noch neu an"
-  },
-
-  {
-    time: 95,
-    text:
-      "Der beste Weg, den man zusammen gehen kann"
-  },
-
-
-  {
-    time: 103,
-    text:
-      "'Cause we fell in love in September"
-  },
-
-  {
-    time: 108,
-    text:
-      "On the twenty-first day"
-  },
-
-  {
-    time: 112,
-    text:
-      "Looking up at the stars"
-  },
-
-  {
-    time: 116,
-    text:
-      "Just the way that I like it"
-  },
-
-
-  {
-    time: 121,
-    text:
-      "моя любимая, mein ganzes Glück"
-  },
-
-  {
-    time: 127,
-    text:
-      "Ich schau nur nach vorn, nie wieder zurück"
-  },
-
-  {
-    time: 133,
-    text:
-      "Du bist meine Welt, mein Lieblingsort"
-  },
-
-  {
-    time: 139,
-    text:
-      "Mit dir bin ich Zuhause, genau hier und sofort"
-  },
-
-
-  {
-    time: 147,
-    text:
-      "со́лнышко, du bist mein Licht"
-  },
-
-  {
-    time: 154,
-    text:
-      "2 Jahre mit dir, ein Ende gibt es nicht"
-  }
-
-];
-
-
-/* =====================================================
-   ELEMENTE
-===================================================== */
-
-const audio =
-  document.getElementById(
-    "audio"
-  );
-
-const audioSource =
-  document.getElementById(
-    "audioSource"
-  );
-
-const playButton =
-  document.getElementById(
-    "play"
-  );
-
-const playIcon =
-  document.getElementById(
-    "playIcon"
-  );
-
-const pauseIcon =
-  document.getElementById(
-    "pauseIcon"
-  );
-
-const backButton =
-  document.getElementById(
-    "back"
-  );
-
-const forwardButton =
-  document.getElementById(
-    "forward"
-  );
-
-const progressWrap =
-  document.getElementById(
-    "progressWrap"
-  );
-
-const progressFill =
-  document.getElementById(
-    "progressFill"
-  );
-
-const progressDot =
-  document.getElementById(
-    "progressDot"
-  );
-
-const currentTime =
-  document.getElementById(
-    "currentTime"
-  );
-
-const totalTime =
-  document.getElementById(
-    "totalTime"
-  );
-
-const lyricsRoot =
-  document.getElementById(
-    "lyrics"
-  );
-
-const volumeSlider =
-  document.getElementById(
-    "volume"
-  );
-
-const volumeValue =
-  document.getElementById(
-    "volumeValue"
-  );
-
-const volumeIcon =
-  document.getElementById(
-    "volumeIcon"
-  );
-
-const error =
-  document.getElementById(
-    "error"
-  );
-
-
-audioSource.src =
-  AUDIO_URL;
-
-
-/* =====================================================
-   LAUTSTÄRKE
-===================================================== */
-
-audio.volume =
-  parseFloat(
-    volumeSlider.value
-  );
-
-
-function updateVolumeUI() {
-
-  const volume =
-    audio.volume;
-
-
-  volumeValue.textContent =
-    Math.round(
-      volume * 100
-    ) + "%";
-
-
-  /*
-   * Lautstärke-Icons wechseln
-   */
-
-  if (
-    volume === 0
-  ) {
-
-    volumeIcon.innerHTML = `
-      <svg
-        width="15"
-        height="15"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.7"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19"></polygon>
-        <line x1="23" y1="9" x2="17" y2="15"></line>
-        <line x1="17" y1="9" x2="23" y2="15"></line>
-      </svg>
-    `;
-
-  }
-
-  else if (
-    volume < .5
-  ) {
-
-    volumeIcon.innerHTML = `
-      <svg
-        width="15"
-        height="15"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.7"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19"></polygon>
-        <path d="M15 9a5 5 0 0 1 0 6"></path>
-      </svg>
-    `;
-
-  }
-
-  else {
-
-    volumeIcon.innerHTML = `
-      <svg
-        width="15"
-        height="15"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.7"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19"></polygon>
-        <path d="M15 9a5 5 0 0 1 0 6"></path>
-        <path d="M18 6.5a9 9 0 0 1 0 11"></path>
-      </svg>
-    `;
-
-  }
-
-}
-
-
-volumeSlider.addEventListener(
-  "input",
-  () => {
+    <source
+      id="audioSource"
+      src="song.mp3"
+      type="audio/mpeg"
+    >
+
+  </audio>
+
+
+  <script>
+
+    const AUDIO_URL =
+      "song.mp3";
+
+
+    const LYRICS = [
+
+      {
+        time: 5,
+        text:
+          "Zusammen auf dem Dach, spätes Septemberlicht"
+      },
+
+      {
+        time: 11,
+        text:
+          "Zwei Jahre an deiner Seite, mehr brauche ich nicht"
+      },
+
+      {
+        time: 17,
+        text:
+          "Der Wind weht leise, du schaust mich an"
+      },
+
+      {
+        time: 23,
+        text:
+          "Und ich denke zurück, wie alles begann:"
+      },
+
+      {
+        time: 29,
+        text:
+          "'Cause we fell in love in September"
+      },
+
+      {
+        time: 34,
+        text:
+          "On the twenty-first day"
+      },
+
+      {
+        time: 38,
+        text:
+          "Looking up at the stars"
+      },
+
+      {
+        time: 42,
+        text:
+          "Just the way that I like it"
+      },
+
+      {
+        time: 47,
+        text:
+          "моя любимая, mein ganzes Glück"
+      },
+
+      {
+        time: 53,
+        text:
+          "Ich schau nur nach vorn, nie wieder zurück"
+      },
+
+      {
+        time: 59,
+        text:
+          "Du bist meine Welt, mein Lieblingsort"
+      },
+
+      {
+        time: 65,
+        text:
+          "Mit dir bin ich Zuhause, genau hier und sofort"
+      },
+
+      {
+        time: 72,
+        text:
+          "Warmes Licht am Abend, der Herbst fängt an"
+      },
+
+      {
+        time: 79,
+        text:
+          "Bin so stolz, dass ich dich meine Freundin nennen kann"
+      },
+
+      {
+        time: 87,
+        text:
+          "Zwei Jahre vergangen, fühlt sich immer noch neu an"
+      },
+
+      {
+        time: 95,
+        text:
+          "Der beste Weg, den man zusammen gehen kann"
+      },
+
+      {
+        time: 103,
+        text:
+          "'Cause we fell in love in September"
+      },
+
+      {
+        time: 108,
+        text:
+          "On the twenty-first day"
+      },
+
+      {
+        time: 112,
+        text:
+          "Looking up at the stars"
+      },
+
+      {
+        time: 116,
+        text:
+          "Just the way that I like it"
+      },
+
+      {
+        time: 121,
+        text:
+          "моя любимая, mein ganzes Glück"
+      },
+
+      {
+        time: 127,
+        text:
+          "Ich schau nur nach vorn, nie wieder zurück"
+      },
+
+      {
+        time: 133,
+        text:
+          "Du bist meine Welt, mein Lieblingsort"
+      },
+
+      {
+        time: 139,
+        text:
+          "Mit dir bin ich Zuhause, genau hier und sofort"
+      },
+
+      {
+        time: 147,
+        text:
+          "со́лнышко, du bist mein Licht"
+      },
+
+      {
+        time: 154,
+        text:
+          "2 Jahre mit dir, ein Ende gibt es nicht"
+      }
+
+    ];
+
+
+    const audio =
+      document.getElementById(
+        "audio"
+      );
+
+
+    const audioSource =
+      document.getElementById(
+        "audioSource"
+      );
+
+
+    const playButton =
+      document.getElementById(
+        "play"
+      );
+
+
+    const playIcon =
+      document.getElementById(
+        "playIcon"
+      );
+
+
+    const pauseIcon =
+      document.getElementById(
+        "pauseIcon"
+      );
+
+
+    const backButton =
+      document.getElementById(
+        "back"
+      );
+
+
+    const forwardButton =
+      document.getElementById(
+        "forward"
+      );
+
+
+    const progressWrap =
+      document.getElementById(
+        "progressWrap"
+      );
+
+
+    const progressFill =
+      document.getElementById(
+        "progressFill"
+      );
+
+
+    const progressDot =
+      document.getElementById(
+        "progressDot"
+      );
+
+
+    const currentTime =
+      document.getElementById(
+        "currentTime"
+      );
+
+
+    const totalTime =
+      document.getElementById(
+        "totalTime"
+      );
+
+
+    const lyricsRoot =
+      document.getElementById(
+        "lyrics"
+      );
+
+
+    const volumeSlider =
+      document.getElementById(
+        "volume"
+      );
+
+
+    const volumeValue =
+      document.getElementById(
+        "volumeValue"
+      );
+
+
+    const volumeIcon =
+      document.getElementById(
+        "volumeIcon"
+      );
+
+
+    const error =
+      document.getElementById(
+        "error"
+      );
+
+
+    audioSource.src =
+      AUDIO_URL;
+
 
     audio.volume =
       parseFloat(
         volumeSlider.value
       );
 
+
+    function updateVolumeUI() {
+
+      const volume =
+        audio.volume;
+
+
+      volumeValue.textContent =
+        Math.round(
+          volume * 100
+        ) + "%";
+
+
+      if (
+        volume === 0
+      ) {
+
+        volumeIcon.innerHTML = `
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+
+            <polygon
+              points="
+                11 5
+                6 9
+                2 9
+                2 15
+                6 15
+                11 19
+              "
+            />
+
+            <line
+              x1="23"
+              y1="9"
+              x2="17"
+              y2="15"
+            />
+
+            <line
+              x1="17"
+              y1="9"
+              x2="23"
+              y2="15"
+            />
+
+          </svg>
+        `;
+
+      }
+
+
+      else if (
+        volume < .5
+      ) {
+
+        volumeIcon.innerHTML = `
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+
+            <polygon
+              points="
+                11 5
+                6 9
+                2 9
+                2 15
+                6 15
+                11 19
+              "
+            />
+
+            <path
+              d="M15 9a5 5 0 0 1 0 6"
+            />
+
+          </svg>
+        `;
+
+      }
+
+
+      else {
+
+        volumeIcon.innerHTML = `
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+
+            <polygon
+              points="
+                11 5
+                6 9
+                2 9
+                2 15
+                6 15
+                11 19
+              "
+            />
+
+            <path
+              d="M15 9a5 5 0 0 1 0 6"
+            />
+
+            <path
+              d="M18 6.5a9 9 0 0 1 0 11"
+            />
+
+          </svg>
+        `;
+
+      }
+
+    }
+
+
+    volumeSlider.addEventListener(
+      "input",
+      () => {
+
+        audio.volume =
+          parseFloat(
+            volumeSlider.value
+          );
+
+
+        updateVolumeUI();
+
+      }
+    );
+
+
     updateVolumeUI();
 
-  }
-);
 
-
-updateVolumeUI();
-
-
-/* =====================================================
-   ZEIT FORMATIEREN
-===================================================== */
-
-function formatTime(
-  seconds
-) {
-
-  if (
-    !Number.isFinite(
+    function formatTime(
       seconds
-    )
-    ||
-    seconds < 0
-  ) {
+    ) {
 
-    return "0:00";
+      if (
+        !Number.isFinite(
+          seconds
+        )
+        ||
+        seconds < 0
+      ) {
 
-  }
+        return "0:00";
 
-
-  const minutes =
-    Math.floor(
-      seconds / 60
-    );
-
-
-  const secs =
-    Math.floor(
-      seconds % 60
-    )
-    .toString()
-    .padStart(
-      2,
-      "0"
-    );
+      }
 
 
-  return (
-    minutes +
-    ":" +
-    secs
-  );
-
-}
+      const minutes =
+        Math.floor(
+          seconds / 60
+        );
 
 
-/* =====================================================
-   LYRICS ERSTELLEN
-===================================================== */
+      const secs =
+        Math.floor(
+          seconds % 60
+        )
+        .toString()
+        .padStart(
+          2,
+          "0"
+        );
 
-function renderLyrics() {
 
-  lyricsRoot.innerHTML =
-    "";
+      return (
+        minutes +
+        ":" +
+        secs
+      );
+
+    }
 
 
-  LYRICS.forEach(
-    (
-      item,
-      index
-    ) => {
+    function renderLyrics() {
 
-      const line =
+      lyricsRoot.innerHTML =
+        "";
+
+
+      LYRICS.forEach(
+        (
+          item,
+          index
+        ) => {
+
+          const line =
+            document.createElement(
+              "div"
+            );
+
+
+          line.className =
+            "line";
+
+
+          line.dataset.index =
+            index;
+
+
+          line.textContent =
+            item.text;
+
+
+          line.addEventListener(
+            "click",
+            () => {
+
+              audio.currentTime =
+                item.time;
+
+
+              updateLyrics(
+                true
+              );
+
+            }
+          );
+
+
+          lyricsRoot.appendChild(
+            line
+          );
+
+
+          if (
+            index === 3 ||
+            index === 7 ||
+            index === 11 ||
+            index === 15 ||
+            index === 19 ||
+            index === 23
+          ) {
+
+            const divider =
+              document.createElement(
+                "div"
+              );
+
+
+            divider.className =
+              "divider";
+
+
+            lyricsRoot.appendChild(
+              divider
+            );
+
+          }
+
+        }
+      );
+
+
+      const ending =
         document.createElement(
           "div"
         );
 
 
-      line.className =
-        "line";
+      ending.className =
+        "ending";
 
 
-      line.dataset.index =
-        index;
+      ending.innerHTML = `
+        Genau hier und sofort
+
+        <strong>
+          Für immer wir ♡
+        </strong>
+      `;
 
 
-      line.textContent =
-        item.text;
+      lyricsRoot.appendChild(
+        ending
+      );
+
+    }
 
 
-      /*
-       * Auf Zeile klicken
-       */
-
-      line.addEventListener(
-        "click",
-        () => {
-
-          audio.currentTime =
-            item.time;
+    let lastActive =
+      -1;
 
 
-          updateLyrics(
-            true
+    function getActiveIndex(
+      time
+    ) {
+
+      let active =
+        -1;
+
+
+      for (
+        let i = 0;
+        i < LYRICS.length;
+        i++
+      ) {
+
+        if (
+          time >=
+          LYRICS[i].time
+        ) {
+
+          active =
+            i;
+
+        }
+
+        else {
+
+          break;
+
+        }
+
+      }
+
+
+      return active;
+
+    }
+
+
+    function updateLyrics(
+      forceScroll = false
+    ) {
+
+      const active =
+        getActiveIndex(
+          audio.currentTime
+        );
+
+
+      const lines =
+        lyricsRoot.querySelectorAll(
+          ".line"
+        );
+
+
+      lines.forEach(
+        (
+          line,
+          index
+        ) => {
+
+          const distance =
+            index -
+            active;
+
+
+          line.classList.toggle(
+            "active",
+            index === active
+          );
+
+
+          line.classList.toggle(
+            "near",
+            Math.abs(
+              distance
+            ) <= 1
+            &&
+            index !== active
           );
 
         }
       );
 
 
-      lyricsRoot.appendChild(
-        line
-      );
-
-
-      /*
-       * Trennlinien nach Strophen
-       */
-
       if (
-        index === 3 ||
-        index === 7 ||
-        index === 11 ||
-        index === 15 ||
-        index === 19 ||
-        index === 23
+        active >= 0
+        &&
+        (
+          active !== lastActive
+          ||
+          forceScroll
+        )
       ) {
 
-        const divider =
-          document.createElement(
-            "div"
+        const activeLine =
+          lyricsRoot.querySelector(
+            `.line[data-index="${active}"]`
           );
 
 
-        divider.className =
-          "divider";
+        if (
+          activeLine
+        ) {
+
+          activeLine.scrollIntoView({
+            behavior:
+              "smooth",
+
+            block:
+              "center"
+          });
+
+        }
 
 
-        lyricsRoot.appendChild(
-          divider
-        );
+        lastActive =
+          active;
 
       }
 
     }
-  );
 
 
-  /*
-   * Ende
-   */
-
-  const ending =
-    document.createElement(
-      "div"
-    );
-
-
-  ending.className =
-    "ending";
-
-
-  ending.innerHTML =
-    `
-      Genau hier und sofort
-      <strong>
-        Für immer wir ♡
-      </strong>
-    `;
-
-
-  lyricsRoot.appendChild(
-    ending
-  );
-
-}
-
-
-/* =====================================================
-   AKTIVE ZEILE BERECHNEN
-===================================================== */
-
-let lastActive =
-  -1;
-
-
-function getActiveIndex(
-  time
-) {
-
-  let active =
-    -1;
-
-
-  for (
-    let i = 0;
-    i < LYRICS.length;
-    i++
-  ) {
-
-    if (
-      time >=
-      LYRICS[i].time
+    function setPlayingUI(
+      playing
     ) {
 
-      active =
-        i;
-
-    }
-
-    else {
-
-      break;
-
-    }
-
-  }
+      playIcon.style.display =
+        playing
+          ? "none"
+          : "block";
 
 
-  return active;
-
-}
-
-
-/* =====================================================
-   LYRICS AKTUALISIEREN
-===================================================== */
-
-function updateLyrics(
-  forceScroll = false
-) {
-
-  const active =
-    getActiveIndex(
-      audio.currentTime
-    );
+      pauseIcon.style.display =
+        playing
+          ? "block"
+          : "none";
 
 
-  const lines =
-    lyricsRoot.querySelectorAll(
-      ".line"
-    );
-
-
-  lines.forEach(
-    (
-      line,
-      index
-    ) => {
-
-      const distance =
-        index -
-        active;
-
-
-      line.classList.toggle(
-        "active",
-        index === active
-      );
-
-
-      line.classList.toggle(
-        "near",
-        Math.abs(distance) <= 1
-        &&
-        index !== active
+      playButton.setAttribute(
+        "aria-label",
+        playing
+          ? "Song pausieren"
+          : "Song abspielen"
       );
 
     }
-  );
 
 
-  /*
-   * Automatisch scrollen
-   */
+    playButton.addEventListener(
+      "click",
+      async () => {
 
-  if (
-    active >= 0
-    &&
-    (
-      active !== lastActive
-      ||
-      forceScroll
-    )
-  ) {
+        if (
+          audio.paused
+        ) {
 
-    const activeLine =
-      lyricsRoot.querySelector(
-        `.line[data-index="${active}"]`
-      );
+          error.textContent =
+            "";
 
 
-    if (
-      activeLine
-    ) {
+          try {
 
-      activeLine.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
+            await audio.play();
 
-    }
+          }
 
+          catch (
+            err
+          ) {
 
-    lastActive =
-      active;
-
-  }
-
-}
+            console.error(
+              err
+            );
 
 
-/* =====================================================
-   PLAY BUTTON
-===================================================== */
+            error.textContent =
+              "Die MP3 konnte nicht geladen werden. Prüfe, ob song.mp3 neben index.html liegt.";
 
-function setPlayingUI(
-  playing
-) {
+          }
 
-  playIcon.style.display =
-    playing
-      ? "none"
-      : "block";
+        }
 
+        else {
 
-  pauseIcon.style.display =
-    playing
-      ? "block"
-      : "none";
+          audio.pause();
 
-
-  playButton.setAttribute(
-    "aria-label",
-    playing
-      ? "Song pausieren"
-      : "Song abspielen"
-  );
-
-}
-
-
-/* =====================================================
-   PLAY / PAUSE
-===================================================== */
-
-playButton.addEventListener(
-  "click",
-  async () => {
-
-    if (
-      audio.paused
-    ) {
-
-      error.textContent =
-        "";
-
-
-      try {
-
-        await audio.play();
+        }
 
       }
+    );
 
-      catch (
-        err
-      ) {
 
-        console.error(
-          err
+    audio.addEventListener(
+      "play",
+      () => {
+
+        setPlayingUI(
+          true
         );
 
+      }
+    );
+
+
+    audio.addEventListener(
+      "pause",
+      () => {
+
+        setPlayingUI(
+          false
+        );
+
+      }
+    );
+
+
+    audio.addEventListener(
+      "loadedmetadata",
+      () => {
+
+        totalTime.textContent =
+          formatTime(
+            audio.duration
+          );
+
+
+        updateProgress();
+
+      }
+    );
+
+
+    audio.addEventListener(
+      "durationchange",
+      updateProgress
+    );
+
+
+    audio.addEventListener(
+      "timeupdate",
+      updateProgress
+    );
+
+
+    audio.addEventListener(
+      "ended",
+      () => {
+
+        setPlayingUI(
+          false
+        );
+
+
+        audio.currentTime =
+          0;
+
+
+        lastActive =
+          -1;
+
+
+        lyricsRoot.scrollTo({
+          top:
+            0,
+
+          behavior:
+            "smooth"
+        });
+
+
+        updateProgress();
+
+      }
+    );
+
+
+    audio.addEventListener(
+      "error",
+      () => {
 
         error.textContent =
-          "Die MP3 konnte nicht geladen werden. Prüfe, ob song.mp3 neben index.html liegt.";
+          "Audio nicht gefunden. Die Datei muss exakt song.mp3 heißen.";
 
       }
-
-    }
-
-    else {
-
-      audio.pause();
-
-    }
-
-  }
-);
-
-
-/* =====================================================
-   AUDIO EVENTS
-===================================================== */
-
-audio.addEventListener(
-  "play",
-  () => {
-
-    setPlayingUI(
-      true
-    );
-
-  }
-);
-
-
-audio.addEventListener(
-  "pause",
-  () => {
-
-    setPlayingUI(
-      false
-    );
-
-  }
-);
-
-
-audio.addEventListener(
-  "loadedmetadata",
-  () => {
-
-    totalTime.textContent =
-      formatTime(
-        audio.duration
-      );
-
-
-    updateProgress();
-
-  }
-);
-
-
-audio.addEventListener(
-  "durationchange",
-  updateProgress
-);
-
-
-audio.addEventListener(
-  "timeupdate",
-  updateProgress
-);
-
-
-audio.addEventListener(
-  "ended",
-  () => {
-
-    setPlayingUI(
-      false
     );
 
 
-    audio.currentTime =
-      0;
+    function updateProgress() {
 
+      const duration =
+        audio.duration;
 
-    lastActive =
-      -1;
 
+      const current =
+        audio.currentTime ||
+        0;
 
-    lyricsRoot.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
 
-
-    updateProgress();
-
-  }
-);
-
-
-audio.addEventListener(
-  "error",
-  () => {
-
-    error.textContent =
-      "Audio nicht gefunden. Die Datei muss exakt song.mp3 heißen.";
-
-  }
-);
-
-
-/* =====================================================
-   PROGRESS
-===================================================== */
-
-function updateProgress() {
-
-  const duration =
-    audio.duration;
-
-
-  const current =
-    audio.currentTime ||
-    0;
-
-
-  currentTime.textContent =
-    formatTime(
-      current
-    );
-
-
-  if (
-    !Number.isFinite(
-      duration
-    )
-    ||
-    duration <= 0
-  ) {
-
-    return;
-
-  }
-
-
-  const percentage =
-    Math.max(
-      0,
-      Math.min(
-        100,
-        current /
-        duration *
-        100
-      )
-    );
-
-
-  progressFill.style.width =
-    percentage +
-    "%";
-
-
-  progressDot.style.left =
-    percentage +
-    "%";
-
-
-  totalTime.textContent =
-    formatTime(
-      duration
-    );
-
-
-  updateLyrics();
-
-}
-
-
-/* =====================================================
-   PROGRESSBAR SEEK
-===================================================== */
-
-function seekFromPointer(
-  clientX
-) {
-
-  if (
-    !Number.isFinite(
-      audio.duration
-    )
-  ) {
-
-    return;
-
-  }
-
-
-  const rect =
-    progressWrap.getBoundingClientRect();
-
-
-  const ratio =
-    Math.max(
-      0,
-      Math.min(
-        1,
-
-        (
-          clientX -
-          rect.left
-        )
-        /
-        rect.width
-      )
-    );
-
-
-  audio.currentTime =
-    ratio *
-    audio.duration;
-
-}
-
-
-progressWrap.addEventListener(
-  "pointerdown",
-  event => {
-
-    seekFromPointer(
-      event.clientX
-    );
-
-
-    progressWrap.setPointerCapture?.(
-      event.pointerId
-    );
-
-  }
-);
-
-
-progressWrap.addEventListener(
-  "pointermove",
-  event => {
-
-    if (
-      event.buttons
-    ) {
-
-      seekFromPointer(
-        event.clientX
-      );
-
-    }
-
-  }
-);
-
-
-/* =====================================================
-   10 SEKUNDEN ZURÜCK
-===================================================== */
-
-backButton.addEventListener(
-  "click",
-  () => {
-
-    audio.currentTime =
-      Math.max(
-        0,
-        audio.currentTime - 10
-      );
-
-  }
-);
-
-
-/* =====================================================
-   10 SEKUNDEN VOR
-===================================================== */
-
-forwardButton.addEventListener(
-  "click",
-  () => {
-
-    audio.currentTime =
-      Math.min(
-        Number.isFinite(
-          audio.duration
-        )
-          ? audio.duration
-          : Infinity,
-
-        audio.currentTime + 10
-      );
-
-  }
-);
-
-
-/* =====================================================
-   INIT LYRICS
-===================================================== */
-
-renderLyrics();
-
-
-setPlayingUI(
-  false
-);
-
-
-/* =====================================================
-   ROMANTISCHER HINTERGRUND
-===================================================== */
-
-const nebulaCanvas =
-  document.getElementById(
-    "nebula"
-  );
-
-const starsCanvas =
-  document.getElementById(
-    "stars"
-  );
-
-const petalsCanvas =
-  document.getElementById(
-    "petals"
-  );
-
-const heartsCanvas =
-  document.getElementById(
-    "hearts"
-  );
-
-
-const nebula =
-  nebulaCanvas.getContext(
-    "2d"
-  );
-
-const stars =
-  starsCanvas.getContext(
-    "2d"
-  );
-
-const petals =
-  petalsCanvas.getContext(
-    "2d"
-  );
-
-const hearts =
-  heartsCanvas.getContext(
-    "2d"
-  );
-
-
-let width =
-  window.innerWidth;
-
-let height =
-  window.innerHeight;
-
-
-let dpr =
-  Math.max(
-    1,
-    Math.min(
-      2,
-      window.devicePixelRatio || 1
-    )
-  );
-
-
-let starData = [];
-
-let petalData = [];
-
-let heartData = [];
-
-let glowData = [];
-
-
-/* =====================================================
-   CANVAS RESIZE
-===================================================== */
-
-function resizeCanvases() {
-
-  width =
-    window.innerWidth;
-
-  height =
-    window.innerHeight;
-
-
-  dpr =
-    Math.max(
-      1,
-      Math.min(
-        2,
-        window.devicePixelRatio || 1
-      )
-    );
-
-
-  [
-    nebulaCanvas,
-    starsCanvas,
-    petalsCanvas,
-    heartsCanvas
-  ].forEach(
-    canvas => {
-
-      canvas.width =
-        width *
-        dpr;
-
-
-      canvas.height =
-        height *
-        dpr;
-
-
-      canvas.style.width =
-        width +
-        "px";
-
-
-      canvas.style.height =
-        height +
-        "px";
-
-    }
-  );
-
-
-  [
-    nebula,
-    stars,
-    petals,
-    hearts
-  ].forEach(
-    context => {
-
-      context.setTransform(
-        dpr,
-        0,
-        0,
-        dpr,
-        0,
-        0
-      );
-
-    }
-  );
-
-
-  createAmbientObjects();
-
-}
-
-
-/* =====================================================
-   RANDOM
-===================================================== */
-
-function random(
-  min,
-  max
-) {
-
-  return (
-    min +
-    Math.random() *
-    (max - min)
-  );
-
-}
-
-
-/* =====================================================
-   AMBIENT OBJEKTE
-===================================================== */
-
-function createAmbientObjects() {
-
-  /*
-   * Sterne
-   */
-
-  starData =
-    Array.from(
-      {
-        length:
-          Math.min(
-            120,
-            Math.floor(
-              width / 7
-            )
-          )
-      },
-
-      () => ({
-
-        x:
-          random(
-            0,
-            width
-          ),
-
-        y:
-          random(
-            0,
-            height
-          ),
-
-        r:
-          random(
-            .35,
-            1.5
-          ),
-
-        alpha:
-          random(
-            .15,
-            .70
-          ),
-
-        speed:
-          random(
-            .03,
-            .18
-          ),
-
-        phase:
-          random(
-            0,
-            Math.PI * 2
-          )
-
-      })
-    );
-
-
-  /*
-   * Blüten
-   */
-
-  petalData =
-    Array.from(
-      {
-        length:
-          Math.min(
-            24,
-            Math.floor(
-              width / 45
-            )
-          )
-      },
-
-      () => ({
-
-        x:
-          random(
-            0,
-            width
-          ),
-
-        y:
-          random(
-            -height,
-            height
-          ),
-
-        scale:
-          random(
-            .65,
-            1.7
-          ),
-
-        speed:
-          random(
-            .10,
-            .36
-          ),
-
-        rotation:
-          random(
-            0,
-            Math.PI * 2
-          ),
-
-        spin:
-          random(
-            -.012,
-            .012
-          ),
-
-        sway:
-          random(
-            0,
-            Math.PI * 2
-          ),
-
-        alpha:
-          random(
-            .12,
-            .42
-          )
-
-      })
-    );
-
-
-  /*
-   * Licht
-   */
-
-  glowData =
-    Array.from(
-      {
-        length: 8
-      },
-
-      (
-        _,
-        index
-      ) => ({
-
-        x:
-          random(
-            -150,
-            width + 150
-          ),
-
-        y:
-          random(
-            -150,
-            height + 150
-          ),
-
-        radius:
-          random(
-            120,
-            280
-          ),
-
-        dx:
-          random(
-            -.035,
-            .035
-          ),
-
-        dy:
-          random(
-            -.025,
-            .025
-          ),
-
-        type:
-          index % 2 === 0
-            ? "rose"
-            : "gold"
-
-      })
-    );
-
-
-  heartData = [];
-
-}
-
-
-/* =====================================================
-   HERZ ZEICHNEN
-===================================================== */
-
-function drawHeart(
-  context,
-  x,
-  y,
-  size,
-  alpha,
-  rotation
-) {
-
-  context.save();
-
-
-  context.translate(
-    x,
-    y
-  );
-
-
-  context.rotate(
-    rotation
-  );
-
-
-  context.globalAlpha =
-    alpha;
-
-
-  context.strokeStyle =
-    "#ffb5c1";
-
-
-  context.lineWidth =
-    1.2;
-
-
-  context.shadowBlur =
-    15;
-
-
-  context.shadowColor =
-    "rgba(255,150,175,.75)";
-
-
-  context.beginPath();
-
-
-  context.moveTo(
-    0,
-    size * .30
-  );
-
-
-  context.bezierCurveTo(
-    -size * .62,
-    -size * .02,
-    -size * .48,
-    -size * .60,
-    0,
-    -size * .30
-  );
-
-
-  context.bezierCurveTo(
-    size * .48,
-    -size * .60,
-    size * .62,
-    -size * .02,
-    0,
-    size * .30
-  );
-
-
-  context.stroke();
-
-
-  context.restore();
-
-}
-
-
-/* =====================================================
-   HINTERGRUND ANIMATION
-===================================================== */
-
-function animateBackground(
-  time
-) {
-
-  nebula.clearRect(
-    0,
-    0,
-    width,
-    height
-  );
-
-
-  stars.clearRect(
-    0,
-    0,
-    width,
-    height
-  );
-
-
-  petals.clearRect(
-    0,
-    0,
-    width,
-    height
-  );
-
-
-  hearts.clearRect(
-    0,
-    0,
-    width,
-    height
-  );
-
-
-  /* -------------------------------------
-     LICH T
-  ------------------------------------- */
-
-  glowData.forEach(
-    glow => {
-
-      glow.x +=
-        glow.dx;
-
-
-      glow.y +=
-        glow.dy;
-
-
-      if (
-        glow.x <
-        -glow.radius
-      ) {
-
-        glow.x =
-          width +
-          glow.radius;
-
-      }
-
-
-      if (
-        glow.x >
-        width +
-        glow.radius
-      ) {
-
-        glow.x =
-          -glow.radius;
-
-      }
-
-
-      if (
-        glow.y <
-        -glow.radius
-      ) {
-
-        glow.y =
-          height +
-          glow.radius;
-
-      }
-
-
-      if (
-        glow.y >
-        height +
-        glow.radius
-      ) {
-
-        glow.y =
-          -glow.radius;
-
-      }
-
-
-      const gradient =
-        nebula.createRadialGradient(
-          glow.x,
-          glow.y,
-          0,
-
-          glow.x,
-          glow.y,
-          glow.radius
+      currentTime.textContent =
+        formatTime(
+          current
         );
 
 
-      gradient.addColorStop(
-        0,
-
-        glow.type === "rose"
-          ? "rgba(255,170,189,.09)"
-          : "rgba(240,207,159,.065)"
-      );
-
-
-      gradient.addColorStop(
-        1,
-        "rgba(0,0,0,0)"
-      );
-
-
-      nebula.fillStyle =
-        gradient;
-
-
-      nebula.beginPath();
-
-
-      nebula.arc(
-        glow.x,
-        glow.y,
-        glow.radius,
-        0,
-        Math.PI * 2
-      );
-
-
-      nebula.fill();
-
-    }
-  );
-
-
-  /* -------------------------------------
-     STERNE
-  ------------------------------------- */
-
-  starData.forEach(
-    star => {
-
-      star.y -=
-        star.speed;
-
-
       if (
-        star.y <
-        -8
-      ) {
-
-        star.y =
-          height + 8;
-
-      }
-
-
-      const twinkle =
-        .58 +
-        Math.sin(
-          time / 850 +
-          star.phase
-        ) * .30;
-
-
-      stars.fillStyle =
-        `rgba(
-          255,
-          225,
-          220,
-          ${star.alpha * twinkle}
-        )`;
-
-
-      stars.beginPath();
-
-
-      stars.arc(
-        star.x,
-        star.y,
-        star.r,
-        0,
-        Math.PI * 2
-      );
-
-
-      stars.fill();
-
-    }
-  );
-
-
-  /* -------------------------------------
-     BLÜTEN
-  ------------------------------------- */
-
-  petalData.forEach(
-    petalItem => {
-
-      petalItem.y +=
-        petalItem.speed;
-
-
-      petalItem.x +=
-        Math.sin(
-          time / 950 +
-          petalItem.sway
-        ) * .20;
-
-
-      petalItem.rotation +=
-        petalItem.spin;
-
-
-      if (
-        petalItem.y >
-        height + 30
-      ) {
-
-        petalItem.y =
-          -30;
-
-
-        petalItem.x =
-          random(
-            0,
-            width
-          );
-
-      }
-
-
-      petals.save();
-
-
-      petals.translate(
-        petalItem.x,
-        petalItem.y
-      );
-
-
-      petals.rotate(
-        petalItem.rotation
-      );
-
-
-      petals.globalAlpha =
-        petalItem.alpha;
-
-
-      petals.fillStyle =
-        "#ff9faf";
-
-
-      petals.beginPath();
-
-
-      petals.moveTo(
-        0,
-        -8 *
-        petalItem.scale
-      );
-
-
-      petals.bezierCurveTo(
-        7 *
-        petalItem.scale,
-
-        -4 *
-        petalItem.scale,
-
-        7 *
-        petalItem.scale,
-
-        5 *
-        petalItem.scale,
-
-        0,
-
-        9 *
-        petalItem.scale
-      );
-
-
-      petals.bezierCurveTo(
-        -7 *
-        petalItem.scale,
-
-        5 *
-        petalItem.scale,
-
-        -7 *
-        petalItem.scale,
-
-        -4 *
-        petalItem.scale,
-
-        0,
-
-        -8 *
-        petalItem.scale
-      );
-
-
-      petals.fill();
-
-
-      petals.restore();
-
-    }
-  );
-
-
-  /* -------------------------------------
-     HERZEN WÄHREND DES SONGS
-  ------------------------------------- */
-
-  if (
-    !audio.paused
-    &&
-    Math.random() < .018
-  ) {
-
-    heartData.push({
-
-      x:
-        random(
-          width * .18,
-          width * .82
-        ),
-
-      y:
-        height + 20,
-
-      size:
-        random(
-          5,
-          11
-        ),
-
-      speed:
-        random(
-          .22,
-          .50
-        ),
-
-      alpha:
-        random(
-          .20,
-          .48
-        ),
-
-      rotation:
-        random(
-          -.20,
-          .20
+        !Number.isFinite(
+          duration
         )
+        ||
+        duration <= 0
+      ) {
 
-    });
+        return;
 
-  }
+      }
 
 
-  heartData =
-    heartData.filter(
-      item =>
-        item.y >
-        -40
+      const percentage =
+        Math.max(
+          0,
+          Math.min(
+            100,
+
+            (
+              current /
+              duration
+            ) * 100
+          )
+        );
+
+
+      progressFill.style.width =
+        percentage +
+        "%";
+
+
+      progressDot.style.left =
+        percentage +
+        "%";
+
+
+      totalTime.textContent =
+        formatTime(
+          duration
+        );
+
+
+      updateLyrics();
+
+    }
+
+
+    function seekFromPointer(
+      clientX
+    ) {
+
+      if (
+        !Number.isFinite(
+          audio.duration
+        )
+      ) {
+
+        return;
+
+      }
+
+
+      const rect =
+        progressWrap.getBoundingClientRect();
+
+
+      const ratio =
+        Math.max(
+          0,
+          Math.min(
+            1,
+
+            (
+              clientX -
+              rect.left
+            )
+            /
+            rect.width
+          )
+        );
+
+
+      audio.currentTime =
+        ratio *
+        audio.duration;
+
+
+      updateProgress();
+
+    }
+
+
+    progressWrap.addEventListener(
+      "pointerdown",
+      event => {
+
+        seekFromPointer(
+          event.clientX
+        );
+
+
+        progressWrap.setPointerCapture?.(
+          event.pointerId
+        );
+
+      }
     );
 
 
-  heartData.forEach(
-    item => {
+    progressWrap.addEventListener(
+      "pointermove",
+      event => {
 
-      item.y -=
-        item.speed;
+        if (
+          event.buttons
+        ) {
+
+          seekFromPointer(
+            event.clientX
+          );
+
+        }
+
+      }
+    );
 
 
-      item.x +=
-        Math.sin(
-          time / 850 +
-          item.y * .01
-        ) * .10;
+    backButton.addEventListener(
+      "click",
+      () => {
+
+        audio.currentTime =
+          Math.max(
+            0,
+            audio.currentTime - 10
+          );
+
+      }
+    );
 
 
-      item.alpha *=
-        .9985;
+    forwardButton.addEventListener(
+      "click",
+      () => {
+
+        audio.currentTime =
+          Math.min(
+
+            Number.isFinite(
+              audio.duration
+            )
+              ? audio.duration
+              : Infinity,
+
+            audio.currentTime + 10
+
+          );
+
+      }
+    );
 
 
-      drawHeart(
-        hearts,
-        item.x,
-        item.y,
-        item.size,
-        item.alpha,
-        item.rotation
+    renderLyrics();
+
+
+    setPlayingUI(
+      false
+    );
+
+
+    const nebulaCanvas =
+      document.getElementById(
+        "nebula"
+      );
+
+
+    const starsCanvas =
+      document.getElementById(
+        "stars"
+      );
+
+
+    const petalsCanvas =
+      document.getElementById(
+        "petals"
+      );
+
+
+    const heartsCanvas =
+      document.getElementById(
+        "hearts"
+      );
+
+
+    const nebula =
+      nebulaCanvas.getContext(
+        "2d"
+      );
+
+
+    const stars =
+      starsCanvas.getContext(
+        "2d"
+      );
+
+
+    const petals =
+      petalsCanvas.getContext(
+        "2d"
+      );
+
+
+    const hearts =
+      heartsCanvas.getContext(
+        "2d"
+      );
+
+
+    let width =
+      window.innerWidth;
+
+
+    let height =
+      window.innerHeight;
+
+
+    let dpr =
+      Math.max(
+        1,
+
+        Math.min(
+          2,
+          window.devicePixelRatio || 1
+        )
+      );
+
+
+    let starData = [];
+
+    let petalData = [];
+
+    let heartData = [];
+
+    let glowData = [];
+
+
+    function resizeCanvases() {
+
+      width =
+        window.innerWidth;
+
+
+      height =
+        window.innerHeight;
+
+
+      dpr =
+        Math.max(
+          1,
+
+          Math.min(
+            2,
+            window.devicePixelRatio || 1
+          )
+        );
+
+
+      [
+        nebulaCanvas,
+        starsCanvas,
+        petalsCanvas,
+        heartsCanvas
+      ].forEach(
+        canvas => {
+
+          canvas.width =
+            width *
+            dpr;
+
+
+          canvas.height =
+            height *
+            dpr;
+
+
+          canvas.style.width =
+            width +
+            "px";
+
+
+          canvas.style.height =
+            height +
+            "px";
+
+        }
+      );
+
+
+      [
+        nebula,
+        stars,
+        petals,
+        hearts
+      ].forEach(
+        context => {
+
+          context.setTransform(
+            dpr,
+            0,
+            0,
+            dpr,
+            0,
+            0
+          );
+
+        }
+      );
+
+
+      createAmbientObjects();
+
+    }
+
+
+    function random(
+      min,
+      max
+    ) {
+
+      return (
+        min +
+        Math.random() *
+        (max - min)
       );
 
     }
-  );
 
 
-  requestAnimationFrame(
-    animateBackground
-  );
+    function createAmbientObjects() {
 
-}
+      starData =
+        Array.from(
+          {
+            length:
+              Math.min(
+                120,
+                Math.floor(
+                  width / 7
+                )
+              )
+          },
+
+          () => ({
+
+            x:
+              random(
+                0,
+                width
+              ),
+
+            y:
+              random(
+                0,
+                height
+              ),
+
+            r:
+              random(
+                .35,
+                1.5
+              ),
+
+            alpha:
+              random(
+                .15,
+                .70
+              ),
+
+            speed:
+              random(
+                .03,
+                .18
+              ),
+
+            phase:
+              random(
+                0,
+                Math.PI * 2
+              )
+
+          })
+        );
 
 
-/* =====================================================
-   START
-===================================================== */
+      petalData =
+        Array.from(
+          {
+            length:
+              Math.min(
+                24,
+                Math.floor(
+                  width / 45
+                )
+              )
+          },
 
-window.addEventListener(
-  "resize",
-  resizeCanvases
-);
+          () => ({
+
+            x:
+              random(
+                0,
+                width
+              ),
+
+            y:
+              random(
+                -height,
+                height
+              ),
+
+            scale:
+              random(
+                .65,
+                1.7
+              ),
+
+            speed:
+              random(
+                .10,
+                .36
+              ),
+
+            rotation:
+              random(
+                0,
+                Math.PI * 2
+              ),
+
+            spin:
+              random(
+                -.012,
+                .012
+              ),
+
+            sway:
+              random(
+                0,
+                Math.PI * 2
+              ),
+
+            alpha:
+              random(
+                .12,
+                .42
+              )
+
+          })
+        );
 
 
-resizeCanvases();
+      glowData =
+        Array.from(
+          {
+            length:
+              8
+          },
+
+          (
+            _,
+            index
+          ) => ({
+
+            x:
+              random(
+                -150,
+                width + 150
+              ),
+
+            y:
+              random(
+                -150,
+                height + 150
+              ),
+
+            radius:
+              random(
+                120,
+                280
+              ),
+
+            dx:
+              random(
+                -.035,
+                .035
+              ),
+
+            dy:
+              random(
+                -.025,
+                .025
+              ),
+
+            type:
+              index % 2 === 0
+                ? "rose"
+                : "gold"
+
+          })
+        );
 
 
-requestAnimationFrame(
-  animateBackground
-);
+      heartData = [];
 
-</script>
+    }
+
+
+    function drawHeart(
+      context,
+      x,
+      y,
+      size,
+      alpha,
+      rotation
+    ) {
+
+      context.save();
+
+
+      context.translate(
+        x,
+        y
+      );
+
+
+      context.rotate(
+        rotation
+      );
+
+
+      context.globalAlpha =
+        alpha;
+
+
+      context.strokeStyle =
+        "#ffb5c1";
+
+
+      context.lineWidth =
+        1.2;
+
+
+      context.shadowBlur =
+        15;
+
+
+      context.shadowColor =
+        "rgba(255,150,175,.75)";
+
+
+      context.beginPath();
+
+
+      context.moveTo(
+        0,
+        size * .30
+      );
+
+
+      context.bezierCurveTo(
+        -size * .62,
+        -size * .02,
+        -size * .48,
+        -size * .60,
+        0,
+        -size * .30
+      );
+
+
+      context.bezierCurveTo(
+        size * .48,
+        -size * .60,
+        size * .62,
+        -size * .02,
+        0,
+        size * .30
+      );
+
+
+      context.stroke();
+
+
+      context.restore();
+
+    }
+
+
+    function animateBackground(
+      time
+    ) {
+
+      nebula.clearRect(
+        0,
+        0,
+        width,
+        height
+      );
+
+
+      stars.clearRect(
+        0,
+        0,
+        width,
+        height
+      );
+
+
+      petals.clearRect(
+        0,
+        0,
+        width,
+        height
+      );
+
+
+      hearts.clearRect(
+        0,
+        0,
+        width,
+        height
+      );
+
+
+      glowData.forEach(
+        glow => {
+
+          glow.x +=
+            glow.dx;
+
+
+          glow.y +=
+            glow.dy;
+
+
+          if (
+            glow.x <
+            -glow.radius
+          ) {
+
+            glow.x =
+              width +
+              glow.radius;
+
+          }
+
+
+          if (
+            glow.x >
+            width +
+            glow.radius
+          ) {
+
+            glow.x =
+              -glow.radius;
+
+          }
+
+
+          if (
+            glow.y <
+            -glow.radius
+          ) {
+
+            glow.y =
+              height +
+              glow.radius;
+
+          }
+
+
+          if (
+            glow.y >
+            height +
+            glow.radius
+          ) {
+
+            glow.y =
+              -glow.radius;
+
+          }
+
+
+          const gradient =
+            nebula.createRadialGradient(
+
+              glow.x,
+              glow.y,
+              0,
+
+              glow.x,
+              glow.y,
+              glow.radius
+
+            );
+
+
+          gradient.addColorStop(
+
+            0,
+
+            glow.type === "rose"
+
+              ? "rgba(255,170,189,.09)"
+
+              : "rgba(240,207,159,.065)"
+
+          );
+
+
+          gradient.addColorStop(
+            1,
+            "rgba(0,0,0,0)"
+          );
+
+
+          nebula.fillStyle =
+            gradient;
+
+
+          nebula.beginPath();
+
+
+          nebula.arc(
+            glow.x,
+            glow.y,
+            glow.radius,
+            0,
+            Math.PI * 2
+          );
+
+
+          nebula.fill();
+
+        }
+      );
+
+
+      starData.forEach(
+        star => {
+
+          star.y -=
+            star.speed;
+
+
+          if (
+            star.y <
+            -8
+          ) {
+
+            star.y =
+              height + 8;
+
+          }
+
+
+          const twinkle =
+            .58 +
+            Math.sin(
+              time / 850 +
+              star.phase
+            ) * .30;
+
+
+          stars.fillStyle =
+            `rgba(
+              255,
+              225,
+              220,
+              ${star.alpha * twinkle}
+            )`;
+
+
+          stars.beginPath();
+
+
+          stars.arc(
+            star.x,
+            star.y,
+            star.r,
+            0,
+            Math.PI * 2
+          );
+
+
+          stars.fill();
+
+        }
+      );
+
+
+      petalData.forEach(
+        petalItem => {
+
+          petalItem.y +=
+            petalItem.speed;
+
+
+          petalItem.x +=
+            Math.sin(
+              time / 950 +
+              petalItem.sway
+            ) * .20;
+
+
+          petalItem.rotation +=
+            petalItem.spin;
+
+
+          if (
+            petalItem.y >
+            height + 30
+          ) {
+
+            petalItem.y =
+              -30;
+
+
+            petalItem.x =
+              random(
+                0,
+                width
+              );
+
+          }
+
+
+          petals.save();
+
+
+          petals.translate(
+            petalItem.x,
+            petalItem.y
+          );
+
+
+          petals.rotate(
+            petalItem.rotation
+          );
+
+
+          petals.globalAlpha =
+            petalItem.alpha;
+
+
+          petals.fillStyle =
+            "#ff9faf";
+
+
+          petals.beginPath();
+
+
+          petals.moveTo(
+            0,
+            -8 *
+            petalItem.scale
+          );
+
+
+          petals.bezierCurveTo(
+
+            7 *
+            petalItem.scale,
+
+            -4 *
+            petalItem.scale,
+
+            7 *
+            petalItem.scale,
+
+            5 *
+            petalItem.scale,
+
+            0,
+
+            9 *
+            petalItem.scale
+
+          );
+
+
+          petals.bezierCurveTo(
+
+            -7 *
+            petalItem.scale,
+
+            5 *
+            petalItem.scale,
+
+            -7 *
+            petalItem.scale,
+
+            -4 *
+            petalItem.scale,
+
+            0,
+
+            -8 *
+            petalItem.scale
+
+          );
+
+
+          petals.fill();
+
+
+          petals.restore();
+
+        }
+      );
+
+
+      if (
+        !audio.paused
+        &&
+        Math.random() < .018
+      ) {
+
+        heartData.push({
+
+          x:
+            random(
+              width * .18,
+              width * .82
+            ),
+
+          y:
+            height + 20,
+
+          size:
+            random(
+              5,
+              11
+            ),
+
+          speed:
+            random(
+              .22,
+              .50
+            ),
+
+          alpha:
+            random(
+              .20,
+              .48
+            ),
+
+          rotation:
+            random(
+              -.20,
+              .20
+            )
+
+        });
+
+      }
+
+
+      heartData =
+        heartData.filter(
+          item =>
+            item.y >
+            -40
+        );
+
+
+      heartData.forEach(
+        item => {
+
+          item.y -=
+            item.speed;
+
+
+          item.x +=
+            Math.sin(
+              time / 850 +
+              item.y * .01
+            ) * .10;
+
+
+          item.alpha *=
+            .9985;
+
+
+          drawHeart(
+
+            hearts,
+
+            item.x,
+            item.y,
+
+            item.size,
+
+            item.alpha,
+
+            item.rotation
+
+          );
+
+        }
+      );
+
+
+      requestAnimationFrame(
+        animateBackground
+      );
+
+    }
+
+
+    window.addEventListener(
+      "resize",
+      resizeCanvases
+    );
+
+
+    resizeCanvases();
+
+
+    requestAnimationFrame(
+      animateBackground
+    );
+
+  </script>
 
 </body>
 </html>
+```
