@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#09070b">
-  <meta name="description" content="Septemberlicht · Zwei Jahre an deiner Seite">
-  <title>Septemberlicht · Zwei Jahre</title>
+  <meta name="theme-color" content="#08070b">
+  <meta name="description" content="Ты лучше всех, ты просто чудо!">
+  <title>Ты лучше всех, ты просто чудо! · Septemberlicht</title>
 
   <style>
     :root {
@@ -107,7 +107,7 @@
     }
 
     /* =========================================
-       SEITEN-CONTAINER
+       SEITE
     ========================================== */
 
     .page {
@@ -236,18 +236,16 @@
 
       font-size:
         clamp(
-          34px,
-          6.2vw,
-          74px
+          32px,
+          6vw,
+          70px
         );
 
-      line-height: 1.02;
+      line-height: 1.04;
 
-      letter-spacing: -.05em;
+      letter-spacing: -.045em;
 
       font-weight: 520;
-
-      text-wrap: balance;
 
       text-shadow:
         0 15px 55px rgba(0,0,0,.35);
@@ -440,7 +438,7 @@
     }
 
     /* =========================================
-       FORTSCHRITTSBALKEN
+       FORTSCHRITT
     ========================================== */
 
     .progress-wrap {
@@ -560,7 +558,7 @@
 
       gap: 15px;
 
-      margin-top: 6px;
+      margin-top: 7px;
     }
 
     .control {
@@ -661,16 +659,153 @@
         scale(.95);
     }
 
+    /* =========================================
+       LAUTSTÄRKE
+    ========================================== */
+
+    .volume-area {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 9px;
+
+      margin-top: 8px;
+    }
+
+    .volume-icon {
+
+      width: 16px;
+
+      flex: 0 0 auto;
+
+      color:
+        rgba(255,255,255,.50);
+
+      display: grid;
+
+      place-items: center;
+    }
+
+    .volume-slider {
+
+      width:
+        min(
+          150px,
+          42%
+        );
+
+      height: 22px;
+
+      appearance: none;
+
+      -webkit-appearance: none;
+
+      background: transparent;
+
+      cursor: pointer;
+    }
+
+    .volume-slider::-webkit-slider-runnable-track {
+
+      height: 4px;
+
+      border-radius: 999px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--rose),
+          var(--gold)
+        );
+    }
+
+    .volume-slider::-moz-range-track {
+
+      height: 4px;
+
+      border-radius: 999px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--rose),
+          var(--gold)
+        );
+    }
+
+    .volume-slider::-webkit-slider-thumb {
+
+      appearance: none;
+
+      -webkit-appearance: none;
+
+      width: 13px;
+      height: 13px;
+
+      margin-top: -4.5px;
+
+      border: 0;
+
+      border-radius: 50%;
+
+      background: #fff;
+
+      box-shadow:
+        0 0 0 4px
+        rgba(255,180,194,.10),
+
+        0 3px 12px
+        rgba(0,0,0,.35);
+    }
+
+    .volume-slider::-moz-range-thumb {
+
+      width: 13px;
+      height: 13px;
+
+      border: 0;
+
+      border-radius: 50%;
+
+      background: #fff;
+
+      box-shadow:
+        0 0 0 4px
+        rgba(255,180,194,.10),
+
+        0 3px 12px
+        rgba(0,0,0,.35);
+    }
+
+    .volume-value {
+
+      width: 30px;
+
+      color:
+        rgba(255,255,255,.36);
+
+      font-size: 9px;
+
+      font-variant-numeric:
+        tabular-nums;
+
+      text-align: right;
+    }
+
     .hint {
 
-      min-height: 14px;
+      min-height: 13px;
 
-      margin-top: 5px;
+      margin-top: 4px;
 
       color:
         rgba(255,255,255,.25);
 
-      font-size: 10px;
+      font-size: 9px;
 
       text-align: center;
     }
@@ -743,7 +878,7 @@
     }
 
     /* =========================================
-       LYRICS SCROLL
+       LYRICS
     ========================================== */
 
     .lyrics {
@@ -763,9 +898,9 @@
         transparent;
 
       padding:
-        72px
+        65px
         18px
-        55vh;
+        52vh;
 
       mask-image:
         linear-gradient(
@@ -803,7 +938,7 @@
     }
 
     /* =========================================
-       EINZELNE LYRIC ZEILE
+       LYRICS ZEILEN
     ========================================== */
 
     .line {
@@ -835,37 +970,33 @@
       opacity: .34;
 
       transform:
-        translateY(22px)
+        translateY(21px)
         scale(.975);
 
       filter:
         blur(1px);
 
       transition:
-        opacity .42s var(--ease),
-        transform .48s var(--ease),
-        color .42s ease,
-        filter .42s ease,
-        text-shadow .42s ease;
-      
+        opacity .40s var(--ease),
+        transform .46s var(--ease),
+        color .40s ease,
+        filter .40s ease,
+        text-shadow .40s ease;
+
       cursor: pointer;
     }
-
-    /* nächste Zeile schon sichtbar */
 
     .line.near {
 
       opacity: .62;
 
       transform:
-        translateY(7px)
+        translateY(6px)
         scale(.995);
 
       filter:
-        blur(.25px);
+        blur(.20px);
     }
-
-    /* aktive Zeile */
 
     .line.active {
 
@@ -888,8 +1019,6 @@
         0 0 35px
         rgba(255,172,190,.12);
     }
-
-    /* leicht leuchtender Punkt neben aktiver Zeile */
 
     .line.active::before {
 
@@ -914,26 +1043,29 @@
 
       box-shadow:
         0 0 14px
-        rgba(255,150,175,.9);
+        rgba(255,150,175,.90);
 
       animation:
-        lyricDot 1.8s ease-in-out infinite;
+        lyricDot 1.5s ease-in-out infinite;
     }
 
     @keyframes lyricDot {
 
-      0%,100% {
+      0%,
+      100% {
+
         transform:
           translateY(-50%)
-          scale(.75);
+          scale(.7);
 
-        opacity: .55;
+        opacity: .5;
       }
 
       50% {
+
         transform:
           translateY(-50%)
-          scale(1.2);
+          scale(1.25);
 
         opacity: 1;
       }
@@ -946,7 +1078,7 @@
       height: 1px;
 
       margin:
-        9px auto 12px;
+        8px auto 11px;
 
       background:
         linear-gradient(
@@ -961,7 +1093,7 @@
 
       text-align: center;
 
-      padding-top: 20px;
+      padding-top: 18px;
 
       color:
         rgba(255,255,255,.25);
@@ -1000,11 +1132,13 @@
     @media (max-width: 760px) {
 
       .page {
+
         padding-left: 9px;
         padding-right: 9px;
       }
 
       .topbar {
+
         padding-bottom: 9px;
       }
 
@@ -1012,7 +1146,7 @@
 
         font-size: 8.5px;
 
-        letter-spacing: .20em;
+        letter-spacing: .18em;
 
         gap: 8px;
       }
@@ -1022,16 +1156,17 @@
       }
 
       .hero {
-        padding-bottom: 9px;
+
+        padding-bottom: 8px;
       }
 
       .title {
 
         font-size:
           clamp(
-            30px,
-            9vw,
-            44px
+            29px,
+            8.6vw,
+            43px
           );
       }
 
@@ -1043,7 +1178,7 @@
 
         grid-template-columns: 1fr;
 
-        gap: 12px;
+        gap: 11px;
 
         padding: 13px;
 
@@ -1054,8 +1189,8 @@
 
         width:
           min(
-            160px,
-            47vw
+            155px,
+            45vw
           );
 
         margin:
@@ -1063,7 +1198,12 @@
       }
 
       .song-info {
+
         text-align: center;
+      }
+
+      .song-label {
+        font-size: 9px;
       }
 
       .song-title {
@@ -1074,6 +1214,26 @@
         font-size: 12px;
       }
 
+      .progress-wrap {
+        margin-top: 15px;
+      }
+
+      .controls {
+        margin-top: 6px;
+      }
+
+      .volume-area {
+        margin-top: 6px;
+      }
+
+      .volume-slider {
+        width:
+          min(
+            145px,
+            50%
+          );
+      }
+
       .lyrics-card {
 
         margin-top: 8px;
@@ -1082,15 +1242,17 @@
       }
 
       .lyrics-top {
-        padding: 10px 13px;
+
+        padding:
+          10px 13px;
       }
 
       .lyrics {
 
         padding:
-          60px
+          55px
           10px
-          50vh;
+          48vh;
       }
 
       .line {
@@ -1100,31 +1262,76 @@
         line-height: 1.42;
 
         padding:
-          10px 4px;
+          9px 4px;
       }
 
       .line.active {
+
         transform:
           scale(1.035);
       }
 
       .line.active::before {
-        left: -10px;
+
+        left: -9px;
       }
 
       .control {
+
         width: 37px;
         height: 37px;
       }
 
       .play {
+
         width: 53px;
         height: 53px;
       }
     }
 
     /* =========================================
-       REDUCED MOTION
+       KLEINE HANDYS
+    ========================================== */
+
+    @media (max-width: 420px) {
+
+      .title {
+
+        font-size:
+          28px;
+      }
+
+      .cover {
+
+        width:
+          138px;
+      }
+
+      .player {
+
+        padding:
+          11px;
+      }
+
+      .lyrics {
+
+        padding-top:
+          48px;
+      }
+
+      .line {
+
+        font-size:
+          15px;
+      }
+
+      .volume-slider {
+        width: 135px;
+      }
+    }
+
+    /* =========================================
+       WENIGER BEWEGUNG
     ========================================== */
 
     @media (prefers-reduced-motion: reduce) {
@@ -1163,9 +1370,9 @@
 
 <div class="page">
 
-  <!-- ========================================
+  <!-- =========================================
        HEADER
-  ========================================= -->
+  ========================================== -->
 
   <header class="topbar">
 
@@ -1180,18 +1387,16 @@
   </header>
 
 
-  <!-- ========================================
-       MAIN
-  ========================================= -->
-
   <main class="main">
 
-    <!-- TITEL -->
+    <!-- =======================================
+         TITEL
+    ======================================== -->
 
     <section class="hero">
 
       <h1 class="title">
-        Zwei Jahre an deiner Seite
+        Ты лучше всех, ты просто чудо!
       </h1>
 
       <p class="subtitle">
@@ -1201,9 +1406,9 @@
     </section>
 
 
-    <!-- ======================================
+    <!-- =======================================
          PLAYER
-    ======================================= -->
+    ======================================== -->
 
     <section class="player">
 
@@ -1221,9 +1426,11 @@
         </div>
 
         <div class="song-sub">
-          Für zwei Jahre. Für immer wir.
+          schon 2 Jahre. Für immer wir.
         </div>
 
+
+        <!-- FORTSCHRITT -->
 
         <div
           class="progress-wrap"
@@ -1262,6 +1469,8 @@
         </div>
 
 
+        <!-- CONTROLS -->
+
         <div class="controls">
 
           <button
@@ -1289,9 +1498,7 @@
               fill="currentColor"
             >
 
-              <path
-                d="M8 5v14l11-7z"
-              />
+              <path d="M8 5v14l11-7z"/>
 
             </svg>
 
@@ -1326,10 +1533,79 @@
         </div>
 
 
+        <!-- ====================================
+             LAUTSTÄRKE
+        ===================================== -->
+
+        <div class="volume-area">
+
+          <div
+            class="volume-icon"
+            id="volumeIcon"
+          >
+
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+
+              <polygon
+                points="
+                  11 5
+                  6 9
+                  2 9
+                  2 15
+                  6 15
+                  11 19
+                "
+              />
+
+              <path
+                d="M19 9a5 5 0 0 1 0 6"
+              />
+
+              <path
+                d="M22 6.5a9 9 0 0 1 0 11"
+              />
+
+            </svg>
+
+          </div>
+
+
+          <input
+            class="volume-slider"
+            id="volume"
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="1"
+            aria-label="Lautstärke"
+          >
+
+
+          <span
+            class="volume-value"
+            id="volumeValue"
+          >
+            100%
+          </span>
+
+        </div>
+
+
         <div
           class="hint"
           id="hint"
         ></div>
+
 
         <div
           class="error"
@@ -1341,9 +1617,9 @@
     </section>
 
 
-    <!-- ======================================
+    <!-- =======================================
          LYRICS
-    ======================================= -->
+    ======================================== -->
 
     <section class="lyrics-card">
 
@@ -1372,15 +1648,12 @@
 </div>
 
 
-<!-- =========================================
-     AUDIO
+<!-- ===========================================
+     MP3
 
-     DIE MP3 MUSS SO HEISSEN:
-
-     song.mp3
-
-     und direkt neben index.html liegen.
-========================================= -->
+     Die Datei muss direkt neben index.html
+     liegen und song.mp3 heißen.
+=========================================== -->
 
 <audio
   id="audio"
@@ -1407,13 +1680,7 @@ const AUDIO_URL =
 
 
 /* =====================================================
-   LYRICS
-
-   Die ersten Zeitpunkte basieren auf deinen bisherigen
-   Angaben.
-
-   Die neuen Zeiten sind bewusst kompakter gesetzt,
-   damit der Text insgesamt schneller läuft.
+   SONGTEXT + ZEITMARKEN
 ===================================================== */
 
 const LYRICS = [
@@ -1652,6 +1919,21 @@ const lyricsRoot =
     "lyrics"
   );
 
+const volumeSlider =
+  document.getElementById(
+    "volume"
+  );
+
+const volumeValue =
+  document.getElementById(
+    "volumeValue"
+  );
+
+const volumeIcon =
+  document.getElementById(
+    "volumeIcon"
+  );
+
 const error =
   document.getElementById(
     "error"
@@ -1663,13 +1945,130 @@ audioSource.src =
 
 
 /* =====================================================
-   ZEIT FORMAT
+   LAUTSTÄRKE
 ===================================================== */
 
-function formatTime(seconds) {
+audio.volume =
+  parseFloat(
+    volumeSlider.value
+  );
+
+
+function updateVolumeUI() {
+
+  const volume =
+    audio.volume;
+
+
+  volumeValue.textContent =
+    Math.round(
+      volume * 100
+    ) + "%";
+
+
+  /*
+   * Lautstärke-Icons wechseln
+   */
 
   if (
-    !Number.isFinite(seconds)
+    volume === 0
+  ) {
+
+    volumeIcon.innerHTML = `
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19"></polygon>
+        <line x1="23" y1="9" x2="17" y2="15"></line>
+        <line x1="17" y1="9" x2="23" y2="15"></line>
+      </svg>
+    `;
+
+  }
+
+  else if (
+    volume < .5
+  ) {
+
+    volumeIcon.innerHTML = `
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19"></polygon>
+        <path d="M15 9a5 5 0 0 1 0 6"></path>
+      </svg>
+    `;
+
+  }
+
+  else {
+
+    volumeIcon.innerHTML = `
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19"></polygon>
+        <path d="M15 9a5 5 0 0 1 0 6"></path>
+        <path d="M18 6.5a9 9 0 0 1 0 11"></path>
+      </svg>
+    `;
+
+  }
+
+}
+
+
+volumeSlider.addEventListener(
+  "input",
+  () => {
+
+    audio.volume =
+      parseFloat(
+        volumeSlider.value
+      );
+
+    updateVolumeUI();
+
+  }
+);
+
+
+updateVolumeUI();
+
+
+/* =====================================================
+   ZEIT FORMATIEREN
+===================================================== */
+
+function formatTime(
+  seconds
+) {
+
+  if (
+    !Number.isFinite(
+      seconds
+    )
     ||
     seconds < 0
   ) {
@@ -1690,7 +2089,10 @@ function formatTime(seconds) {
       seconds % 60
     )
     .toString()
-    .padStart(2, "0");
+    .padStart(
+      2,
+      "0"
+    );
 
 
   return (
@@ -1713,7 +2115,10 @@ function renderLyrics() {
 
 
   LYRICS.forEach(
-    (item, index) => {
+    (
+      item,
+      index
+    ) => {
 
       const line =
         document.createElement(
@@ -1734,7 +2139,7 @@ function renderLyrics() {
 
 
       /*
-       * Klickbare Lyrics
+       * Auf Zeile klicken
        */
 
       line.addEventListener(
@@ -1743,6 +2148,7 @@ function renderLyrics() {
 
           audio.currentTime =
             item.time;
+
 
           updateLyrics(
             true
@@ -1758,7 +2164,7 @@ function renderLyrics() {
 
 
       /*
-       * kleine Trennlinien
+       * Trennlinien nach Strophen
        */
 
       if (
@@ -1791,7 +2197,7 @@ function renderLyrics() {
 
 
   /*
-   * Abschluss
+   * Ende
    */
 
   const ending =
@@ -1821,7 +2227,7 @@ function renderLyrics() {
 
 
 /* =====================================================
-   AKTIVE ZEILE
+   AKTIVE ZEILE BERECHNEN
 ===================================================== */
 
 let lastActive =
@@ -1850,7 +2256,9 @@ function getActiveIndex(
       active =
         i;
 
-    } else {
+    }
+
+    else {
 
       break;
 
@@ -1865,7 +2273,7 @@ function getActiveIndex(
 
 
 /* =====================================================
-   LYRICS UPDATE
+   LYRICS AKTUALISIEREN
 ===================================================== */
 
 function updateLyrics(
@@ -1885,10 +2293,14 @@ function updateLyrics(
 
 
   lines.forEach(
-    (line, index) => {
+    (
+      line,
+      index
+    ) => {
 
       const distance =
-        index - active;
+        index -
+        active;
 
 
       line.classList.toggle(
@@ -1899,7 +2311,8 @@ function updateLyrics(
 
       line.classList.toggle(
         "near",
-        Math.abs(distance) <= 1 &&
+        Math.abs(distance) <= 1
+        &&
         index !== active
       );
 
@@ -1908,8 +2321,7 @@ function updateLyrics(
 
 
   /*
-   * Nur scrollen, wenn die Zeile
-   * tatsächlich gewechselt hat.
+   * Automatisch scrollen
    */
 
   if (
@@ -1928,11 +2340,9 @@ function updateLyrics(
       );
 
 
-    if (activeLine) {
-
-      /*
-       * Schnellere, direktere Bewegung
-       */
+    if (
+      activeLine
+    ) {
 
       activeLine.scrollIntoView({
         behavior: "smooth",
@@ -1951,7 +2361,7 @@ function updateLyrics(
 
 
 /* =====================================================
-   PLAY BUTTON UI
+   PLAY BUTTON
 ===================================================== */
 
 function setPlayingUI(
@@ -2002,7 +2412,9 @@ playButton.addEventListener(
 
       }
 
-      catch (err) {
+      catch (
+        err
+      ) {
 
         console.error(
           err
@@ -2010,7 +2422,7 @@ playButton.addEventListener(
 
 
         error.textContent =
-          "Die MP3 wurde nicht gefunden. Prüfe, ob song.mp3 neben index.html liegt.";
+          "Die MP3 konnte nicht geladen werden. Prüfe, ob song.mp3 neben index.html liegt.";
 
       }
 
@@ -2099,10 +2511,6 @@ audio.addEventListener(
       -1;
 
 
-    /*
-     * wieder nach oben
-     */
-
     lyricsRoot.scrollTo({
       top: 0,
       behavior: "smooth"
@@ -2120,7 +2528,7 @@ audio.addEventListener(
   () => {
 
     error.textContent =
-      "Audio nicht gefunden. Die Datei muss song.mp3 heißen.";
+      "Audio nicht gefunden. Die Datei muss exakt song.mp3 heißen.";
 
   }
 );
@@ -2160,7 +2568,7 @@ function updateProgress() {
   }
 
 
-  const percent =
+  const percentage =
     Math.max(
       0,
       Math.min(
@@ -2173,11 +2581,13 @@ function updateProgress() {
 
 
   progressFill.style.width =
-    percent + "%";
+    percentage +
+    "%";
 
 
   progressDot.style.left =
-    percent + "%";
+    percentage +
+    "%";
 
 
   totalTime.textContent =
@@ -2192,7 +2602,7 @@ function updateProgress() {
 
 
 /* =====================================================
-   SEEK
+   PROGRESSBAR SEEK
 ===================================================== */
 
 function seekFromPointer(
@@ -2219,10 +2629,12 @@ function seekFromPointer(
       0,
       Math.min(
         1,
+
         (
           clientX -
           rect.left
-        ) /
+        )
+        /
         rect.width
       )
     );
@@ -2271,7 +2683,7 @@ progressWrap.addEventListener(
 
 
 /* =====================================================
-   10 SEKUNDEN
+   10 SEKUNDEN ZURÜCK
 ===================================================== */
 
 backButton.addEventListener(
@@ -2287,6 +2699,10 @@ backButton.addEventListener(
   }
 );
 
+
+/* =====================================================
+   10 SEKUNDEN VOR
+===================================================== */
 
 forwardButton.addEventListener(
   "click",
@@ -2308,10 +2724,11 @@ forwardButton.addEventListener(
 
 
 /* =====================================================
-   LYRICS INITIALISIEREN
+   INIT LYRICS
 ===================================================== */
 
 renderLyrics();
+
 
 setPlayingUI(
   false
@@ -2382,13 +2799,16 @@ let dpr =
 
 
 let starData = [];
+
 let petalData = [];
+
 let heartData = [];
+
 let glowData = [];
 
 
 /* =====================================================
-   RESIZE
+   CANVAS RESIZE
 ===================================================== */
 
 function resizeCanvases() {
@@ -2422,13 +2842,16 @@ function resizeCanvases() {
         width *
         dpr;
 
+
       canvas.height =
         height *
         dpr;
 
+
       canvas.style.width =
         width +
         "px";
+
 
       canvas.style.height =
         height +
@@ -2483,7 +2906,7 @@ function random(
 
 
 /* =====================================================
-   AMBIENTE
+   AMBIENT OBJEKTE
 ===================================================== */
 
 function createAmbientObjects() {
@@ -2617,7 +3040,7 @@ function createAmbientObjects() {
 
 
   /*
-   * Licht-Orbs
+   * Licht
    */
 
   glowData =
@@ -2626,7 +3049,10 @@ function createAmbientObjects() {
         length: 8
       },
 
-      (_, index) => ({
+      (
+        _,
+        index
+      ) => ({
 
         x:
           random(
@@ -2757,7 +3183,7 @@ function drawHeart(
 
 
 /* =====================================================
-   ANIMATION
+   HINTERGRUND ANIMATION
 ===================================================== */
 
 function animateBackground(
@@ -2797,14 +3223,18 @@ function animateBackground(
 
 
   /* -------------------------------------
-     Licht-Orbs
+     LICH T
   ------------------------------------- */
 
   glowData.forEach(
     glow => {
 
-      glow.x += glow.dx;
-      glow.y += glow.dy;
+      glow.x +=
+        glow.dx;
+
+
+      glow.y +=
+        glow.dy;
 
 
       if (
@@ -2860,6 +3290,7 @@ function animateBackground(
           glow.x,
           glow.y,
           0,
+
           glow.x,
           glow.y,
           glow.radius
@@ -2904,7 +3335,7 @@ function animateBackground(
 
 
   /* -------------------------------------
-     Sterne
+     STERNE
   ------------------------------------- */
 
   starData.forEach(
@@ -2961,7 +3392,7 @@ function animateBackground(
 
 
   /* -------------------------------------
-     Blüten
+     BLÜTEN
   ------------------------------------- */
 
   petalData.forEach(
@@ -3027,31 +3458,48 @@ function animateBackground(
 
       petals.moveTo(
         0,
-        -8 * petalItem.scale
+        -8 *
+        petalItem.scale
       );
 
 
       petals.bezierCurveTo(
-        7 * petalItem.scale,
-        -4 * petalItem.scale,
+        7 *
+        petalItem.scale,
 
-        7 * petalItem.scale,
-        5 * petalItem.scale,
+        -4 *
+        petalItem.scale,
+
+        7 *
+        petalItem.scale,
+
+        5 *
+        petalItem.scale,
 
         0,
-        9 * petalItem.scale
+
+        9 *
+        petalItem.scale
       );
 
 
       petals.bezierCurveTo(
-        -7 * petalItem.scale,
-        5 * petalItem.scale,
+        -7 *
+        petalItem.scale,
 
-        -7 * petalItem.scale,
-        -4 * petalItem.scale,
+        5 *
+        petalItem.scale,
+
+        -7 *
+        petalItem.scale,
+
+        -4 *
+        petalItem.scale,
 
         0,
-        -8 * petalItem.scale
+
+        -8 *
+        petalItem.scale
       );
 
 
@@ -3065,11 +3513,12 @@ function animateBackground(
 
 
   /* -------------------------------------
-     Herzen während Musik
+     HERZEN WÄHREND DES SONGS
   ------------------------------------- */
 
   if (
-    !audio.paused &&
+    !audio.paused
+    &&
     Math.random() < .018
   ) {
 
@@ -3104,8 +3553,8 @@ function animateBackground(
 
       rotation:
         random(
-          -.2,
-          .2
+          -.20,
+          .20
         )
 
     });
